@@ -1,0 +1,77 @@
+@import '../../../config.scss';
+
+.whats-showing-now-playing {
+    width: 100%;
+    padding: 1.5rem .5rem;
+    .section-title {
+
+    }
+
+    .posters-container {
+        display: flex;
+        .credit-poster {
+            display: block;
+            width: 25%;
+            padding: 0 .25rem .5rem;
+            color: $color-gray-900;
+            border-radius: 10px;
+        }
+    }
+
+    .ant-carousel .slick-initialized .slick-slide {
+        display: flex;
+    }
+
+    .ant-carousel .slick-dots {
+        bottom: -7px;
+    }
+
+    .slick-track {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .ant-carousel .slick-prev {
+        left: -15px;
+    }
+
+    .ant-carousel .slick-next {
+        right: -18px;
+    }
+
+    i.anticon.anticon-right,
+    i.anticon.anticon-left {
+        color: $color-gray-200;
+    }
+
+}
+
+@media only screen and (max-width : 992px) {
+    .whats-showing-now-playing {
+        .posters-container {
+            .credit-poster {
+                
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .whats-showing-now-playing {
+        .posters-container {
+            .credit-poster {
+                //width: 33.33%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .whats-showing-now-playing {
+        .posters-container {
+            .credit-poster {
+
+            }
+        }
+    }
+}

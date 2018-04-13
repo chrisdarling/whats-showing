@@ -1,0 +1,36 @@
+.whats-showing-movie-reccomendations {
+  margin: 0;
+  color: #dadedf; }
+  .whats-showing-movie-reccomendations .rec-title {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    color: #dadedf; }
+  .whats-showing-movie-reccomendations .rec-poster-container {
+    display: flex;
+    padding-top: .5rem; }
+    .whats-showing-movie-reccomendations .rec-poster-container .credit-poster {
+      display: block;
+      width: 20%;
+      padding: 0 .25rem .5rem;
+      color: #131516;
+      border-radius: 10px; }
+  .whats-showing-movie-reccomendations .name {
+    text-align: center;
+    font-size: .8rem; }
+  .whats-showing-movie-reccomendations .rec-default {
+    margin-top: 1rem; }
+  .whats-showing-movie-reccomendations .ant-carousel .slick-initialized .slick-slide {
+    display: flex; }
+  .whats-showing-movie-reccomendations .ant-carousel .slick-dots {
+    bottom: -7px; }
+  .whats-showing-movie-reccomendations .slick-track {
+    display: flex;
+    overflow: hidden; }
+  .whats-showing-movie-reccomendations .ant-carousel .slick-prev {
+    left: -15px; }
+  .whats-showing-movie-reccomendations .ant-carousel .slick-next {
+    right: -18px; }
+  .whats-showing-movie-reccomendations i.anticon.anticon-right,
+  .whats-showing-movie-reccomendations i.anticon.anticon-left {
+    color: #dadedf; }

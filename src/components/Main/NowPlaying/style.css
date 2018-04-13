@@ -1,0 +1,25 @@
+.whats-showing-now-playing {
+  width: 100%;
+  padding: 1.5rem .5rem; }
+  .whats-showing-now-playing .posters-container {
+    display: flex; }
+    .whats-showing-now-playing .posters-container .credit-poster {
+      display: block;
+      width: 25%;
+      padding: 0 .25rem .5rem;
+      color: #131516;
+      border-radius: 10px; }
+  .whats-showing-now-playing .ant-carousel .slick-initialized .slick-slide {
+    display: flex; }
+  .whats-showing-now-playing .ant-carousel .slick-dots {
+    bottom: -7px; }
+  .whats-showing-now-playing .slick-track {
+    display: flex;
+    overflow: hidden; }
+  .whats-showing-now-playing .ant-carousel .slick-prev {
+    left: -15px; }
+  .whats-showing-now-playing .ant-carousel .slick-next {
+    right: -18px; }
+  .whats-showing-now-playing i.anticon.anticon-right,
+  .whats-showing-now-playing i.anticon.anticon-left {
+    color: #dadedf; }

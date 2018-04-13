@@ -1,0 +1,98 @@
+@import '../../config.scss';
+
+.whats-showing-section {
+    width: 100%;
+    padding: 1.5rem .5rem;
+    &-card-container {
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+        width: 100%;
+    }   
+    &-wrapper {
+        width: 24%;
+        margin: .5%; 
+    }
+    .menu-item-link {
+        display: block;
+        position: relative;
+        .section-title {
+            color: $color-gray-200;
+            font-size: 1.5rem;
+            margin: 0;
+            margin-left: .5rem;
+            &:hover { 
+                color: $color-theme-5;
+            }
+        }
+    }
+    &-card {
+        display: flex;
+        flex-direction: column;
+        background: $color-theme-6;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        width: 100%;
+        height: 100%;
+        .intrinsic {
+
+            // Make sure <picture> wrapper is set to block
+            // Max-width is governed by parentNode
+            display: block;
+        
+            // Intrinsic Ratio Box
+            position: relative;
+            height: 0;
+            width: 100%;
+            padding-top: 100%; // Default to square
+        
+            // Custom Styling
+            background: $color-theme-6;
+            //border: 1px solid $color-theme-6;
+        
+            // Add as many ratios as you'd like...
+            &.intrinsic--2x3 {
+                padding-top: 56%;
+            }
+        }
+        .backdrop-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card-content {
+            padding: .5rem;
+            color: $color-gray-200;
+            //background: $color-gray-900;
+            &:hover {
+                color: $color-theme-5;
+            }
+            cursor: pointer;
+            .small-title, .small-date {
+                font-size: .8rem;
+                padding-bottom: .5rem;
+                margin-right: .5rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .whats-showing-section {
+        &-wrapper {
+            width: 32%;
+            margin: .5%;
+        }
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .whats-showing-section {
+        &-wrapper {
+            width: 48%;
+            margin: 1%;
+        }
+    }
+}

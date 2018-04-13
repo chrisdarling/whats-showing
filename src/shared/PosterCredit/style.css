@@ -1,0 +1,35 @@
+.credit-poster {
+  display: block;
+  position: relative; }
+  .credit-poster .intrinsic {
+    display: block;
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-top: 100%;
+    background: #293237;
+    border-radius: .5rem; }
+    .credit-poster .intrinsic.intrinsic--2x3 {
+      padding-top: 150%; }
+  .credit-poster .poster-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    border: 1px solid #293237; }
+  .credit-poster .placeholder {
+    opacity: 0.4; }
+  .credit-poster .poster-title {
+    display: none;
+    position: absolute;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    width: 70%;
+    right: 15%;
+    top: 30%;
+    color: #dadedf; }
+    .credit-poster .poster-title.show {
+      display: block; }

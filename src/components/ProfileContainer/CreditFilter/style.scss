@@ -1,0 +1,67 @@
+@import '../../../config.scss';
+
+.credit-filter {
+    &-title {
+        font-size: 1.2rem;
+        font-weight: 200;
+        margin-left: .4rem;
+        margin-bottom: .5rem;
+        .name {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+    }
+    .job-filter, .sort-filter {
+        background: $color-theme-6;
+        color: $color-gray-200;
+        width: 32%;
+        margin: .5%;
+        .ant-select-selection--single {
+            background: $color-theme-6;
+            .ant-select-arrow {
+                color: $color-gray-200;
+            }
+        }
+    }
+
+    .selector-wrapper {
+        margin-top: 1rem;
+        margin-bottom: .5rem;
+    }
+    .year-selector {
+        .ant-radio-button-wrapper {
+            width: 10%;
+            background: $color-theme-6;
+            color: $color-gray-200;
+        }
+        .ant-radio-button-wrapper-checked {
+            background: $color-gray-400;
+            color: $color-theme-5;
+            border: 1px solid $color-theme-5;
+        }
+    }
+}
+
+.ant-select-dropdown-menu-item {
+    background: $color-theme-6;
+    color: $color-gray-200;
+    &:hover {
+        color: $color-theme-5;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .credit-filter {
+        .year-selector {
+            .ant-radio-button-wrapper {
+                width: 20%;
+                margin: 0;
+            }
+        }
+        &-title {
+            margin-top: 1rem;
+            .name {
+            }
+        }
+    }
+}

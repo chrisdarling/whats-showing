@@ -1,0 +1,122 @@
+@import '../../config.scss';
+
+.whats-showing-profile {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    height: 100%;
+    padding-top: 4rem;
+    color: $color-gray-200;
+    .push {
+        height: 5rem;
+    }
+    .profile-container {
+        display: flex;
+        width: 1000px;
+        height: 100%;
+        min-height: 100%;
+        .left-column {
+            width: 30%;
+            .actor-info {
+                width: 230px;
+            }
+            .see-more {
+                color: $color-theme-5;
+            }
+            .profile-name {
+                width: 230px;
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+            .biography {
+                font-weight: 200;
+            }
+            .profile-image-container {
+                .profile-image {
+                    width: 230px;
+                    height: 345px;
+                    color: $color-gray-200;
+                    background: $color-theme-6;
+                    border: 2px solid $color-theme-6;
+                    border-radius: 10px;
+                }
+            }
+        }
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+        }
+    }
+}
+
+@media only screen and (max-width : 992px) {
+    .whats-showing-profile {
+        .profile-container {
+            flex-direction: column;
+            align-items: center;
+            padding: .5rem;
+            width: 768px;
+            .left-column {
+                display: flex;
+                width: 100%;
+                .actor-info {
+                    margin-left: .5rem;
+                    position: relative;
+                    height: 180px;
+                    width: 100%;
+                    &.auto-height {
+                        height: auto;
+                    }
+                }
+                .profile-name {
+                    width: 100%;
+                    margin-bottom: 1rem;
+                }
+                .profile-image-container {
+                    .profile-image {
+                        width: 185px;
+                        height: 278px;
+                    }
+                }
+            }
+            .right-column {
+                width: 100%;
+            }
+        }
+        
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .whats-showing-profile {
+        //width: 100%;
+        .profile-container {
+            .left-column {
+                display: flex;
+                width: 100%;
+                .actor-info {
+                    margin-left: .5rem;
+                    position: relative;
+                    height: 180px;
+                    width: 100%;
+                    &.auto-height {
+                        height: auto;
+                    }
+                }
+                .profile-image-container {
+                    .profile-image {
+                        width: 120px;
+                        height: 180px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .whats-showing-profile {
+        width: 100%;
+    }
+}

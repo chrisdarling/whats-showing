@@ -1,0 +1,194 @@
+@import '../../config.scss';
+
+.whats-showing-navbar {
+    position: fixed;
+    display: flex;
+    padding: 0;
+    color: $color-gray-200;
+    background: $color-theme-6;
+    box-shadow: 0 2px 8px $color-gray-700;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3.5rem;
+    z-index: 2;
+    
+    &-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0 .5rem;
+        width: 1000px;
+        .nav-bar-right {
+            display: flex;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            margin-right: .5rem;
+            .search-icon {
+                width: 1.2rem;
+                height: 1.2rem;
+                fill: #fff;
+                margin-bottom: .2rem;
+            }
+        }
+
+        .menu-items {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            .menu-item {
+                margin-right: 1.5rem;
+                height: 100%;
+                font-weight: 300;
+                padding: 1rem 0;
+                cursor: pointer;
+                &.search {
+                    display: flex;
+                    align-items: center;
+                }
+                &:hover {
+                    color: $color-theme-5;
+                    .sub-menu-container {
+                        display: block;
+                    }
+
+                }
+
+                .search-icon {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    fill: $color-gray-200;
+                    margin-bottom: .2rem;
+                }
+
+                .sub-menu-container {
+                    display: none;
+                    .menu-sub-items {
+                        display: flex;
+                        flex-direction: column;
+                        width: 11rem;
+                        margin: .5rem 0 0 0;
+                        position: absolute;
+                        list-style: none;
+                        color: $color-gray-200;
+                        background: $color-theme-6;
+                        padding: 0;
+                        &:hover {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .menu-sub-item {
+                            padding: .5rem;
+                            &:hover {
+                                background: $color-gray-200;
+                                color: $color-theme-5;
+                            }
+                        }
+        
+                    }
+                }   
+            }
+        }
+
+        .nav-bar-left {
+            &.hide-lg {
+                display: none;
+            }
+        }
+
+        .title-container {        
+            .menu-item-link {
+                display: flex;
+                align-items: center;
+                .anticon.anticon-play-circle-o {
+                    margin-right: .25rem;
+                    font-size: 1.1rem;
+                    &:hover, 
+                    &:focus, 
+                    &:after, 
+                    &:before {
+                        text-decoration: none;
+                        color: $color-gray-200;
+                        fill: $color-gray-200;
+                    }
+                }
+            }
+        }
+
+        .title {
+            text-align: center;
+            vertical-align: center;
+            font-size: 1.2rem;
+            color: $color-gray-200;
+            font-weight: 300;
+            margin: 0;
+            b {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+        }
+
+        .menu-icon {
+           margin-right: .5rem;
+           width: 1.2rem;
+           height: 1.2rem;
+        }
+    }
+}
+
+@media only screen and (max-width : 992px) {
+    .whats-showing-navbar {    
+        &-container {
+            width: 900px;
+        }
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .whats-showing-navbar {    
+        &-container {
+            width: 100%;
+            .menu-item-link {
+                &.hide-lg {
+                    display: flex;
+                }
+            }
+            .nav-bar-left {
+                &.hide-lg {
+                    display: flex;
+                }
+            }
+            .menu-items {
+                &.hide-sm {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .whats-showing-navbar {    
+        &-container {
+            .nav-bar-left {
+                &.hide-lg {
+                    display: flex;
+                }
+            }
+            .menu-items {
+                &.hide-sm {
+                    display: none;
+                }
+            }
+            .title-container {
+                justify-content: center;
+            }
+        }
+    }
+}

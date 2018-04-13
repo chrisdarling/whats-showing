@@ -1,0 +1,17 @@
+.whats-showing-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 4rem auto;
+  width: 1000px; }
+  @media only screen and (max-width: 992px) {
+    .whats-showing-main {
+      width: 80%; } }
+  @media only screen and (max-width: 768px) {
+    .whats-showing-main {
+      width: 80%; } }
+  @media only screen and (max-width: 480px) {
+    .whats-showing-main {
+      width: 100%; } }

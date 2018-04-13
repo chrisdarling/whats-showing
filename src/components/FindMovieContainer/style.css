@@ -1,0 +1,66 @@
+.whats-showing-find-movies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 .5rem;
+  padding-top: 4rem;
+  color: #dadedf; }
+  .whats-showing-find-movies-results {
+    width: 1000px; }
+    .whats-showing-find-movies-results .result-items {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: 0 -8px; }
+    .whats-showing-find-movies-results .credit-poster {
+      display: block;
+      width: 20%;
+      padding: 0 8px 8px;
+      color: #131516;
+      background: transparent;
+      border-radius: 10px; }
+    .whats-showing-find-movies-results .result-filter {
+      width: 100%;
+      margin-bottom: .5rem;
+      margin-left: -6px;
+      margin-right: -6px; }
+      .whats-showing-find-movies-results .result-filter .sort-filter {
+        background: transparent;
+        color: #dadedf;
+        width: 33.33%;
+        padding: .5rem 6px .5rem; }
+        .whats-showing-find-movies-results .result-filter .sort-filter .ant-select-selection--single {
+          background: #293237; }
+          .whats-showing-find-movies-results .result-filter .sort-filter .ant-select-selection--single .ant-select-arrow {
+            color: #dadedf; }
+
+.ant-select-dropdown-menu-item {
+  background: #293237;
+  color: #dadedf; }
+  .ant-select-dropdown-menu-item:hover {
+    color: #62b0a2; }
+
+@media only screen and (max-width: 992px) {
+  .whats-showing-find-movies-results {
+    width: 768px; }
+    .whats-showing-find-movies-results .result-items {
+      margin: 0 -8px; }
+    .whats-showing-find-movies-results .credit-poster {
+      width: 25%;
+      padding: 0 8px 5px; } }
+
+@media only screen and (max-width: 768px) {
+  .whats-showing-find-movies-results {
+    width: 100%; }
+    .whats-showing-find-movies-results .result-items {
+      margin: 0 -8px; }
+    .whats-showing-find-movies-results .credit-poster {
+      width: 25%;
+      padding: 0 8px 5px; } }
+
+@media only screen and (max-width: 480px) {
+  .whats-showing-find-movies-results .result-items {
+    margin: 0 -6px; }
+  .whats-showing-find-movies-results .credit-poster {
+    width: 33.33%;
+    padding: 0 6px 5px; } }

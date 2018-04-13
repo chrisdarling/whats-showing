@@ -1,0 +1,180 @@
+@import '../../config.scss';
+
+.whats-showing-search {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 4rem auto;
+    width: 1000px;
+    padding: .5rem;
+    color: $color-gray-200;
+    &-sidebar {
+        width: 30%;
+        margin: 1rem 0;
+        .sidebar-title {
+            width: 90%;
+            height: 2rem;
+            font-weight: 200;
+            padding-bottom: .5rem;
+            border-bottom: 1px solid $color-gray-200;
+            margin-bottom: .5rem;
+        }
+        .movies {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            font-weight: 200;
+            cursor: pointer;
+            padding: .5rem;
+            margin-bottom: .5rem;
+        }
+        .people {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            font-weight: 200;
+            cursor: pointer;
+            padding: .5rem;
+        }
+        .active {
+            background: $color-theme-6;
+            font-weight: 600;
+        }
+    }
+    &-results {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin: 1rem 0;
+
+        .result-header {
+            font-size: 1rem;
+            padding-bottom: .5rem;
+            font-weight: 200;
+            width: 100%;
+            height: 2rem;
+            border-bottom: 1px solid $color-gray-200;
+            color: $color-gray-200;
+        }
+        .search-string {
+            font-weight: 600;
+        }
+        .result-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 100%;
+            margin-top: 1rem;
+            .no-content {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 200px;
+                background: $color-theme-6;
+                p {
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+        }
+        .credit-poster {
+            display: block;
+            width: 25%;
+            padding: 0 .5rem 0 .5rem;
+            margin-bottom: .5rem;
+            color: $color-gray-900;
+            border-radius: 10px;
+        }
+        .credit-title {
+            position: absolute;
+            width: 100%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding: .5rem;
+        }
+        .credit-profile {
+            display: flex;
+            align-items: center;
+            height: 100px;
+            width: 100%;
+            border-bottom: 1px solid $color-gray-200;
+        }
+        .name {
+            font-size: 1.2rem;
+            margin-left: .5rem;
+            color: $color-gray-200;
+        }
+        .profile-image-container {
+            width: 45px;
+            height: 67.5px;
+            color: $color-gray-200;
+            background: $color-theme-6;
+            border-radius: 10px;
+        }
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            color: $color-gray-200;
+            background: $color-theme-6;
+            border: 2px solid $color-theme-6;
+            border-radius: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width : 992px) {
+    .whats-showing-search {
+        flex-direction: column;
+        width: 768px;
+        &-sidebar {
+            width: 100%;
+            .sidebar-title, .movies, .people {
+                width: 100%;
+            }
+        }
+        &-results {
+            width: 100%;
+            .result-container {
+            }
+            .credit-poster {
+                width: 25%;
+                padding: 0 8px .5rem;
+                //height: 220px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .whats-showing-search {
+        flex-direction: column;
+        width: 100%;
+        &-results {
+            .result-container {
+
+            }
+            .credit-poster {
+                width: 25%;
+                padding: 0 8px .5rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .whats-showing-search {
+        flex-direction: column;
+        width: 100%;
+        &-results {
+            .result-container {
+                padding: 0 -6px;
+            }
+            .credit-poster {
+                width: 33.33%;
+                padding: 0 6px .5rem;
+                height: 178px;;
+            }
+        }
+    }
+}

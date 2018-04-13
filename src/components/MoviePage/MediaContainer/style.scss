@@ -1,0 +1,157 @@
+@import '../../../config.scss';
+
+.whats-showing-movie-media {
+    margin: 0;
+    color: $color-gray-200;
+    .media-header {
+        margin-bottom: 1rem;
+    }
+    .media-title {
+        margin: 0;
+        padding: 0;
+        font-size: 1.5rem;
+        color: $color-gray-200;
+    }
+    .media-tabs {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        list-style: none;
+        line-height: 46px;
+        border-bottom: 1px solid $color-gray-300;
+    }
+
+    .media-tab {
+        font-size: 1rem;
+        margin: 0;
+        padding: 0 1rem;
+        color: $color-gray-200;
+        cursor: pointer;
+        &:hover {
+            font-weight: 700;
+            color: $color-theme-5;
+        }
+        &.active {
+            font-weight: 700;
+            color: $color-theme-5;
+            border-bottom: 2px solid $color-theme-5;
+        }
+    }
+
+    .no-media {
+        display: flex;
+        padding-bottom: 1rem;
+        transition: width .15s, opacity .15s linear;
+        .media-default {
+            height: 350px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background: $color-theme-6;
+            p {
+                text-align: center;
+                width:100%;
+            }
+        }
+    }
+
+    .media-container {
+        display: flex;
+        padding-bottom: 1rem;
+        opacity: 0;
+        height: 0;
+        visibility: hidden;
+        transition: width .15s, opacity .15s linear;
+        &.show-video,
+        &.show-image {
+            opacity: 1;
+            visibility: visible;
+            height: 100%;
+            transition: width .15s, opacity .15s linear;
+        } 
+        .video-item, .image-item {
+            margin: 1rem;
+        }
+        .video-item {
+            width: 100%;
+            height: 350px;
+        }
+
+        .video {
+            width: 100%;
+            height: 100%;
+        }
+        .poster {
+            width: 100%;
+        }
+        .video, .poster {
+            background: $color-theme-6;
+        }
+    }
+
+    .ant-carousel .slick-initialized .slick-slide {
+        display: flex;
+    }
+
+    .ant-carousel .slick-dots {
+        bottom: -7px;
+        margin-bottom: 1rem;
+    }
+
+    .slick-track {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .ant-carousel .slick-prev {
+        left: -15px;
+    }
+
+    .ant-carousel .slick-next {
+        right: -18px;
+    }
+
+    i.anticon.anticon-right,
+    i.anticon.anticon-left {
+        color: $color-gray-200;
+    }
+}
+
+@media only screen and (max-width : 992px) {
+    .whats-showing-movie-media {
+        .media-container {
+            .image-item {
+                margin: 1rem 5rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .whats-showing-movie-media {
+        .media-container {
+            .image-item {
+                margin: 1rem 8rem;
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .whats-showing-movie-media {
+        .no-media {
+            .media-default {
+                height: 200px;
+            }
+        }
+        .media-container {
+            .image-item {
+                margin: 1rem;
+            }
+            .video-item {
+                height: 200px;
+            }
+        }
+    }
+}

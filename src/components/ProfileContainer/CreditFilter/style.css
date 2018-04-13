@@ -1,0 +1,45 @@
+.credit-filter-title {
+  font-size: 1.2rem;
+  font-weight: 200;
+  margin-left: .4rem;
+  margin-bottom: .5rem; }
+  .credit-filter-title .name {
+    font-size: 1.2rem;
+    font-weight: 600; }
+
+.credit-filter .job-filter, .credit-filter .sort-filter {
+  background: #293237;
+  color: #dadedf;
+  width: 32%;
+  margin: .5%; }
+  .credit-filter .job-filter .ant-select-selection--single, .credit-filter .sort-filter .ant-select-selection--single {
+    background: #293237; }
+    .credit-filter .job-filter .ant-select-selection--single .ant-select-arrow, .credit-filter .sort-filter .ant-select-selection--single .ant-select-arrow {
+      color: #dadedf; }
+
+.credit-filter .selector-wrapper {
+  margin-top: 1rem;
+  margin-bottom: .5rem; }
+
+.credit-filter .year-selector .ant-radio-button-wrapper {
+  width: 10%;
+  background: #293237;
+  color: #dadedf; }
+
+.credit-filter .year-selector .ant-radio-button-wrapper-checked {
+  background: #a7b0b2;
+  color: #62b0a2;
+  border: 1px solid #62b0a2; }
+
+.ant-select-dropdown-menu-item {
+  background: #293237;
+  color: #dadedf; }
+  .ant-select-dropdown-menu-item:hover {
+    color: #62b0a2; }
+
+@media only screen and (max-width: 768px) {
+  .credit-filter .year-selector .ant-radio-button-wrapper {
+    width: 20%;
+    margin: 0; }
+  .credit-filter-title {
+    margin-top: 1rem; } }

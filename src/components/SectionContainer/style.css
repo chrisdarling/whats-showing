@@ -1,0 +1,63 @@
+.whats-showing-section {
+  width: 100%;
+  padding: 1.5rem .5rem; }
+  .whats-showing-section-card-container {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%; }
+  .whats-showing-section-wrapper {
+    width: 24%;
+    margin: .5%; }
+  .whats-showing-section .menu-item-link {
+    display: block;
+    position: relative; }
+    .whats-showing-section .menu-item-link .section-title {
+      color: #dadedf;
+      font-size: 1.5rem;
+      margin: 0;
+      margin-left: .5rem; }
+      .whats-showing-section .menu-item-link .section-title:hover {
+        color: #62b0a2; }
+  .whats-showing-section-card {
+    display: flex;
+    flex-direction: column;
+    background: #293237;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%; }
+    .whats-showing-section-card .intrinsic {
+      display: block;
+      position: relative;
+      height: 0;
+      width: 100%;
+      padding-top: 100%;
+      background: #293237; }
+      .whats-showing-section-card .intrinsic.intrinsic--2x3 {
+        padding-top: 56%; }
+    .whats-showing-section-card .backdrop-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    .whats-showing-section-card .card-content {
+      padding: .5rem;
+      color: #dadedf;
+      cursor: pointer; }
+      .whats-showing-section-card .card-content:hover {
+        color: #62b0a2; }
+      .whats-showing-section-card .card-content .small-title, .whats-showing-section-card .card-content .small-date {
+        font-size: .8rem;
+        padding-bottom: .5rem;
+        margin-right: .5rem; }
+
+@media only screen and (max-width: 768px) {
+  .whats-showing-section-wrapper {
+    width: 32%;
+    margin: .5%; } }
+
+@media only screen and (max-width: 480px) {
+  .whats-showing-section-wrapper {
+    width: 48%;
+    margin: 1%; } }

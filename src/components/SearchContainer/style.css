@@ -1,0 +1,136 @@
+.whats-showing-search {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 4rem auto;
+  width: 1000px;
+  padding: .5rem;
+  color: #dadedf; }
+  .whats-showing-search-sidebar {
+    width: 30%;
+    margin: 1rem 0; }
+    .whats-showing-search-sidebar .sidebar-title {
+      width: 90%;
+      height: 2rem;
+      font-weight: 200;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid #dadedf;
+      margin-bottom: .5rem; }
+    .whats-showing-search-sidebar .movies {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      font-weight: 200;
+      cursor: pointer;
+      padding: .5rem;
+      margin-bottom: .5rem; }
+    .whats-showing-search-sidebar .people {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      font-weight: 200;
+      cursor: pointer;
+      padding: .5rem; }
+    .whats-showing-search-sidebar .active {
+      background: #293237;
+      font-weight: 600; }
+  .whats-showing-search-results {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 1rem 0; }
+    .whats-showing-search-results .result-header {
+      font-size: 1rem;
+      padding-bottom: .5rem;
+      font-weight: 200;
+      width: 100%;
+      height: 2rem;
+      border-bottom: 1px solid #dadedf;
+      color: #dadedf; }
+    .whats-showing-search-results .search-string {
+      font-weight: 600; }
+    .whats-showing-search-results .result-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+      margin-top: 1rem; }
+      .whats-showing-search-results .result-container .no-content {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 200px;
+        background: #293237; }
+        .whats-showing-search-results .result-container .no-content p {
+          text-align: center;
+          width: 100%; }
+    .whats-showing-search-results .credit-poster {
+      display: block;
+      width: 25%;
+      padding: 0 .5rem 0 .5rem;
+      margin-bottom: .5rem;
+      color: #131516;
+      border-radius: 10px; }
+    .whats-showing-search-results .credit-title {
+      position: absolute;
+      width: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: .5rem; }
+    .whats-showing-search-results .credit-profile {
+      display: flex;
+      align-items: center;
+      height: 100px;
+      width: 100%;
+      border-bottom: 1px solid #dadedf; }
+    .whats-showing-search-results .name {
+      font-size: 1.2rem;
+      margin-left: .5rem;
+      color: #dadedf; }
+    .whats-showing-search-results .profile-image-container {
+      width: 45px;
+      height: 67.5px;
+      color: #dadedf;
+      background: #293237;
+      border-radius: 10px; }
+    .whats-showing-search-results .profile-image {
+      width: 100%;
+      height: 100%;
+      color: #dadedf;
+      background: #293237;
+      border: 2px solid #293237;
+      border-radius: 10px; }
+
+@media only screen and (max-width: 992px) {
+  .whats-showing-search {
+    flex-direction: column;
+    width: 768px; }
+    .whats-showing-search-sidebar {
+      width: 100%; }
+      .whats-showing-search-sidebar .sidebar-title, .whats-showing-search-sidebar .movies, .whats-showing-search-sidebar .people {
+        width: 100%; }
+    .whats-showing-search-results {
+      width: 100%; }
+      .whats-showing-search-results .credit-poster {
+        width: 25%;
+        padding: 0 8px .5rem; } }
+
+@media only screen and (max-width: 768px) {
+  .whats-showing-search {
+    flex-direction: column;
+    width: 100%; }
+    .whats-showing-search-results .credit-poster {
+      width: 25%;
+      padding: 0 8px .5rem; } }
+
+@media only screen and (max-width: 480px) {
+  .whats-showing-search {
+    flex-direction: column;
+    width: 100%; }
+    .whats-showing-search-results .result-container {
+      padding: 0 -6px; }
+    .whats-showing-search-results .credit-poster {
+      width: 33.33%;
+      padding: 0 6px .5rem;
+      height: 178px; } }

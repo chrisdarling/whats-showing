@@ -1,0 +1,59 @@
+@import '../../../config.scss';
+
+.whats-showing-movie-reccomendations {
+    margin: 0;
+    color: $color-gray-200;
+    .rec-title {
+        margin: 0;
+        padding: 0;
+        font-size: 1.5rem;
+        color: $color-gray-200;
+    }
+
+    .rec-poster-container {
+        display: flex;
+        padding-top: .5rem;
+        .credit-poster {
+            display: block;
+            width: 20%;
+            padding: 0 .25rem .5rem;
+            color: $color-gray-900;
+            border-radius: 10px;
+        }
+    }
+
+    .name {
+        text-align: center;
+        font-size: .8rem;
+    }
+
+    .rec-default {
+        margin-top: 1rem;
+    }
+
+    .ant-carousel .slick-initialized .slick-slide {
+        display: flex;
+    }
+
+    .ant-carousel .slick-dots {
+        bottom: -7px;
+    }
+
+    .slick-track {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .ant-carousel .slick-prev {
+        left: -15px;
+    }
+
+    .ant-carousel .slick-next {
+        right: -18px;
+    }
+
+    i.anticon.anticon-right,
+    i.anticon.anticon-left {
+        color: $color-gray-200;
+    }
+}

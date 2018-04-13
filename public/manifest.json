@@ -1,0 +1,15 @@
+{
+  "short_name": "What's Showing",
+  "name": "What's Showiing - Find Movies and TV Shows",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16, 192x192, 512x512",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#62b0a2",
+  "background_color": "#ffffff"
+}

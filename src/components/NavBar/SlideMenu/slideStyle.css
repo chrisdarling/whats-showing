@@ -1,0 +1,83 @@
+.whats-showing-navbar-slide {
+  display: none;
+  position: absolute;
+  top: 3.5rem;
+  bottom: 0;
+  width: 100%;
+  background: #293237;
+  border-top: 0.5px solid #dadedf;
+  border-right: 0.5px solid #dadedf;
+  opacity: 0;
+  height: 100vh;
+  transition: width .15s,z-index .15s step-start,opacity .15s linear;
+  overflow-y: hidden;
+  z-index: -4;
+  visibility: hidden; }
+  @media only screen and (max-width: 768px) {
+    .whats-showing-navbar-slide {
+      display: block; } }
+  @media only screen and (max-width: 480px) {
+    .whats-showing-navbar-slide {
+      display: block; } }
+  .whats-showing-navbar-slide.open {
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+    transition: width .15s,z-index .15s step-start,opacity .15s linear; }
+  .whats-showing-navbar-slide .menu-item-link.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 1rem;
+    border-bottom: 0.5px solid #dadedf; }
+    .whats-showing-navbar-slide .menu-item-link.logo .title {
+      color: #dadedf;
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 300; }
+    .whats-showing-navbar-slide .menu-item-link.logo .anticon.anticon-close {
+      margin-right: .25rem;
+      font-size: 1.1rem; }
+  .whats-showing-navbar-slide-list {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .whats-showing-navbar-slide-list .home {
+      margin: 0;
+      margin-bottom: 1rem; }
+    .whats-showing-navbar-slide-list .menu-item {
+      padding: 1rem 0 1rem 1rem;
+      color: #fff;
+      cursor: pointer;
+      border-bottom: 0.5px solid #dadedf;
+      color: #62b0a2; }
+      .whats-showing-navbar-slide-list .menu-item.home {
+        margin-bottom: 0;
+        font-weight: 300; }
+    .whats-showing-navbar-slide-list .menu-item-link {
+      text-decoration: none;
+      color: inherit;
+      margin: 0; }
+    .whats-showing-navbar-slide-list .text {
+      font-size: 1.1rem;
+      font-weight: 300; }
+  .whats-showing-navbar-slide-sublist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 200; }
+    .whats-showing-navbar-slide-sublist .menu-sub-item {
+      margin: 0;
+      margin-top: .5rem;
+      margin-left: .5rem;
+      font-size: 1rem;
+      color: #dadedf;
+      padding: .5rem 0;
+      cursor: pointer; }
+    .whats-showing-navbar-slide-sublist .menu-item-link {
+      text-decoration: none;
+      color: inherit; }

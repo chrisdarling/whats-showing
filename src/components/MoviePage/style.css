@@ -1,0 +1,131 @@
+.whats-showing-movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  padding-top: 4.5rem;
+  margin-bottom: -5rem;
+  color: #dadedf; }
+  .whats-showing-movie-details {
+    display: flex;
+    padding: 0 1rem;
+    width: 1000px;
+    height: 100%; }
+    .whats-showing-movie-details .column-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      height: 100%;
+      width: 300px; }
+      .whats-showing-movie-details .column-left .movie-side-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        margin: 0;
+        width: 300px; }
+        .whats-showing-movie-details .column-left .movie-side-bar .poster-image {
+          width: 230px;
+          height: 345px;
+          border: 2px solid #293237;
+          border-radius: 10px; }
+        .whats-showing-movie-details .column-left .movie-side-bar .details {
+          width: 230px;
+          margin-top: 1rem; }
+          .whats-showing-movie-details .column-left .movie-side-bar .details .title {
+            font-size: 1.7rem;
+            font-weight: 600; }
+          .whats-showing-movie-details .column-left .movie-side-bar .details .genres {
+            display: flex;
+            flex-wrap: wrap; }
+          .whats-showing-movie-details .column-left .movie-side-bar .details .genre-item {
+            font-size: .8rem;
+            padding: .5rem;
+            color: #dadedf;
+            background: #293237;
+            margin-right: .5rem;
+            margin-top: .5rem;
+            border-radius: 5px;
+            font-weight: 200; }
+          .whats-showing-movie-details .column-left .movie-side-bar .details .status-info {
+            flex-wrap: wrap;
+            margin-top: .5rem;
+            font-weight: 200; }
+          .whats-showing-movie-details .column-left .movie-side-bar .details .status {
+            margin-right: 1rem; }
+    .whats-showing-movie-details .column-right {
+      display: flex;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      flex-direction: column;
+      height: 100%;
+      width: 70%; }
+
+@media only screen and (max-width: 992px) {
+  .whats-showing-movie-details {
+    flex-direction: column;
+    width: 100%; }
+    .whats-showing-movie-details .column-left {
+      flex-direction: row;
+      width: 100%; }
+      .whats-showing-movie-details .column-left .movie-side-bar {
+        flex-direction: row;
+        position: relative;
+        margin: 0;
+        margin-bottom: 1rem;
+        width: 100%; }
+        .whats-showing-movie-details .column-left .movie-side-bar .poster-image {
+          width: 185px;
+          height: 278px; }
+        .whats-showing-movie-details .column-left .movie-side-bar .details .title {
+          text-align: left;
+          margin-left: 1rem; }
+        .whats-showing-movie-details .column-left .movie-side-bar .details .status-info {
+          margin-top: 1rem;
+          margin-left: 1rem; }
+    .whats-showing-movie-details .column-right {
+      width: 100%;
+      margin: 0;
+      padding: 0; } }
+
+@media only screen and (max-width: 768px) {
+  .whats-showing-movie-details {
+    flex-direction: column;
+    width: 100%; }
+    .whats-showing-movie-details .column-left {
+      width: 100%; }
+      .whats-showing-movie-details .column-left .movie-side-bar {
+        flex-direction: row;
+        position: relative; }
+        .whats-showing-movie-details .column-left .movie-side-bar .poster-image {
+          width: 185px;
+          height: 278px; }
+        .whats-showing-movie-details .column-left .movie-side-bar .details .genres {
+          margin-left: 1rem; }
+        .whats-showing-movie-details .column-left .movie-side-bar .details .title {
+          margin-left: 1rem; }
+    .whats-showing-movie-details .column-right {
+      width: 100%;
+      margin: 0;
+      padding: 0; } }
+
+@media only screen and (max-width: 480px) {
+  .whats-showing-movie-details {
+    flex-direction: column;
+    width: 100%; }
+    .whats-showing-movie-details .column-left {
+      width: 100%; }
+      .whats-showing-movie-details .column-left .movie-side-bar {
+        flex-direction: row;
+        position: relative; }
+        .whats-showing-movie-details .column-left .movie-side-bar .poster-image {
+          width: 120px;
+          height: 180px; }
+        .whats-showing-movie-details .column-left .movie-side-bar .details .title {
+          margin-left: 1rem; }
+    .whats-showing-movie-details .column-right {
+      width: 100%;
+      margin: 0;
+      padding: 0; } }
