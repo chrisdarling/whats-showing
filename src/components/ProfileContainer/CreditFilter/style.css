@@ -1,25 +1,16 @@
 .credit-filter-title {
   font-size: 1.2rem;
   font-weight: 200;
-  margin-left: .4rem;
+  margin: 0;
   margin-bottom: .5rem; }
   .credit-filter-title .name {
     font-size: 1.2rem;
     font-weight: 600; }
 
-.credit-filter .job-filter, .credit-filter .sort-filter {
-  background: #293237;
-  color: #dadedf;
-  width: 32%;
-  margin: .5%; }
-  .credit-filter .job-filter .ant-select-selection--single, .credit-filter .sort-filter .ant-select-selection--single {
-    background: #293237; }
-    .credit-filter .job-filter .ant-select-selection--single .ant-select-arrow, .credit-filter .sort-filter .ant-select-selection--single .ant-select-arrow {
-      color: #dadedf; }
-
-.credit-filter .selector-wrapper {
-  margin-top: 1rem;
-  margin-bottom: .5rem; }
+.credit-filter .credit-filter-column {
+  display: flex; }
+  .credit-filter .credit-filter-column > :last-child {
+    margin-right: 0 !important; }
 
 .credit-filter .year-selector .ant-radio-button-wrapper {
   width: 10%;

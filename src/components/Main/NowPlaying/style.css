@@ -1,6 +1,8 @@
 .whats-showing-now-playing {
   width: 100%;
   padding: 1.5rem .5rem; }
+  .whats-showing-now-playing .section-title {
+    text-transform: uppercase; }
   .whats-showing-now-playing .posters-container {
     display: flex; }
     .whats-showing-now-playing .posters-container .credit-poster {
@@ -14,7 +16,7 @@
   .whats-showing-now-playing .ant-carousel .slick-dots {
     bottom: -7px; }
   .whats-showing-now-playing .slick-track {
-    display: flex;
+    display: flex !important;
     overflow: hidden; }
   .whats-showing-now-playing .ant-carousel .slick-prev {
     left: -15px; }

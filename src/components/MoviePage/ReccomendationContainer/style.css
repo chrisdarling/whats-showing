@@ -25,7 +25,7 @@
   .whats-showing-movie-reccomendations .ant-carousel .slick-dots {
     bottom: -7px; }
   .whats-showing-movie-reccomendations .slick-track {
-    display: flex;
+    display: flex !important;
     overflow: hidden; }
   .whats-showing-movie-reccomendations .ant-carousel .slick-prev {
     left: -15px; }

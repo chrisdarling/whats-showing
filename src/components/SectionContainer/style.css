@@ -8,14 +8,17 @@
     width: 100%; }
   .whats-showing-section-wrapper {
     width: 24%;
-    margin: .5%; }
+    margin: .5%;
+    margin-bottom: 8px; }
   .whats-showing-section .menu-item-link {
     display: block;
     position: relative; }
     .whats-showing-section .menu-item-link .section-title {
+      text-transform: uppercase;
       color: #dadedf;
       font-size: 1.5rem;
       margin: 0;
+      margin-bottom: .5rem;
       margin-left: .5rem; }
       .whats-showing-section .menu-item-link .section-title:hover {
         color: #62b0a2; }
@@ -41,6 +44,8 @@
       left: 0;
       width: 100%;
       height: 100%; }
+    .whats-showing-section-card .placeholder {
+      opacity: 0.6; }
     .whats-showing-section-card .card-content {
       padding: .5rem;
       color: #dadedf;

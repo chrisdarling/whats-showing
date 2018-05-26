@@ -26,20 +26,19 @@ export default class SlideMenu extends Component {
         return (
             <aside ref={node => { this.slidemenu = node; }} className={toggleClass}>
                 <div className="menu-item-link logo">
-                    <h1 className="title">Menu</h1>
                     <div onClick={toggleMenu}><Icon type="close" /></div>
                 </div>
                 <ul className={`${className}-slide-list`}>
                     <Link to="/" onClick={toggleMenu} className="menu-item-link home">
-                        <li className="menu-item home"><span className="text">Home</span></li>
+                        <li className="menu-item home"><span className="text">HOME</span></li>
                     </Link>
                     <li className="menu-item">
-                    <Link to="/movies/find/1" onClick={toggleMenu} className="menu-item-link movies"><span className="text">Movies</span></Link>
+                    <Link to="/movies/find/1" onClick={toggleMenu} className="menu-item-link movies"><span className="text">MOVIES</span></Link>
                         <ul className={`${className}-slide-sublist`}>
                         <Link to="/movies" onClick={toggleMenu} className="menu-item-link"><li className="menu-sub-item">Popular</li></Link>
                             <Link to="/movies/showing" onClick={toggleMenu} className="menu-item-link"><li className="menu-sub-item">Now Showing</li></Link>
                             <Link to="/movies/upcoming" onClick={toggleMenu} className="menu-item-link"><li className="menu-sub-item">Upcoming</li></Link>
-                            <Link to="/movies/find/1" onClick={toggleMenu} className="menu-item-link"><li className="menu-sub-item">Find Movies</li></Link>
+                            <Link to="/movies/find/1" onClick={toggleMenu} className="menu-item-link"><li className="menu-sub-item">Discover Movies</li></Link>
                         </ul>
                     </li>
                 </ul>

@@ -2,15 +2,13 @@
 
 .whats-showing-search {
     display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 4rem auto;
-    width: 1000px;
+    flex-direction: row;
     padding: .5rem;
     color: $color-gray-200;
     &-sidebar {
         width: 30%;
         margin: 1rem 0;
+        align-self: flex-start;
         .sidebar-title {
             width: 90%;
             height: 2rem;
@@ -96,9 +94,9 @@
         .credit-profile {
             display: flex;
             align-items: center;
-            height: 100px;
-            width: 100%;
-            border-bottom: 1px solid $color-gray-200;
+            width: 50%;
+            //border-bottom: .25px solid $color-gray-200;
+            padding: .5rem 0;
         }
         .name {
             font-size: 1.2rem;
@@ -106,19 +104,44 @@
             color: $color-gray-200;
         }
         .profile-image-container {
-            width: 45px;
-            height: 67.5px;
-            color: $color-gray-200;
-            background: $color-theme-6;
-            border-radius: 10px;
+            display: block;
+            width: 33.33%;
         }
         .profile-image {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            color: $color-gray-200;
+            border-radius: 5px;
+            border: 1px solid $color-theme-6;
             background: $color-theme-6;
-            border: 2px solid $color-theme-6;
-            border-radius: 10px;
+        }
+
+        .placeholder {
+            //opacity: 0.4;
+        }
+        .intrinsic {
+
+            // Make sure <picture> wrapper is set to block
+            // Max-width is governed by parentNode
+            display: block;
+        
+            // Intrinsic Ratio Box
+            position: relative;
+            height: 0;
+            width: 100%;
+            padding-top: 100%; // Default to square
+        
+            // Custom Styling
+            background: $color-theme-6;
+            border-radius: .5rem;
+            //border: 1px solid $color-theme-6;
+        
+            // Add as many ratios as you'd like...
+            &.intrinsic--2x3 {
+                padding-top: 150%;
+            }
         }
     }
 }
@@ -126,7 +149,6 @@
 @media only screen and (max-width : 992px) {
     .whats-showing-search {
         flex-direction: column;
-        width: 768px;
         &-sidebar {
             width: 100%;
             .sidebar-title, .movies, .people {
@@ -139,8 +161,6 @@
             }
             .credit-poster {
                 width: 25%;
-                padding: 0 8px .5rem;
-                //height: 220px;
             }
         }
     }
@@ -156,7 +176,7 @@
             }
             .credit-poster {
                 width: 25%;
-                padding: 0 8px .5rem;
+                padding: .25rem .25rem 0;
             }
         }
     }
@@ -166,15 +186,5 @@
     .whats-showing-search {
         flex-direction: column;
         width: 100%;
-        &-results {
-            .result-container {
-                padding: 0 -6px;
-            }
-            .credit-poster {
-                width: 33.33%;
-                padding: 0 6px .5rem;
-                height: 178px;;
-            }
-        }
     }
 }

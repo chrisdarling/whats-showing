@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import AsyncComponent from '../../shared/AsyncComponent';
-import './style.css';
+import Container from '../../shared/Container';
+//import AsyncComponent from '../../shared/AsyncComponent';
+import PopularMovieContainer from './Popular';
+import ShowingMovieContainer from './Showing';
+import UpcomingMovieContainer from './Upcoming';
 
-const PopularMovieContainer = AsyncComponent(() => import('./Popular')
-    .then(module => module.default)
-    .catch(() => window.location.reload()));
-const ShowingMovieContainer = AsyncComponent(() => import('./Showing')
-    .then(module => module.default)
-    .catch(() => window.location.reload()));
-const UpcomingMovieContainer = AsyncComponent(() => import('./Upcoming')
-    .then(module => module.default)
-    .catch(() => window.location.reload()));
+// const PopularMovieContainer = AsyncComponent(() => import('./Popular')
+//     .then(module => module.default))
+// const ShowingMovieContainer = AsyncComponent(() => import('./Showing')
+//     .then(module => module.default))
+// const UpcomingMovieContainer = AsyncComponent(() => import('./Upcoming')
+//     .then(module => module.default))
 
-const baseClass = 'whats-showing-movies';
 export default class MovieContainer extends Component {
     render() {
         return (
-            <div className={baseClass}>
+            <Container>
                 <Switch>
                     <Route path="/movies/showing" exact component={ShowingMovieContainer} />
                     <Route path="/movies/upcoming" exact component={UpcomingMovieContainer} />
                     <Route path="/" component={PopularMovieContainer} />
                 </Switch>
-            </div>
+            </Container>
         );
     }
 }

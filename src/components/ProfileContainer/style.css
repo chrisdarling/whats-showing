@@ -3,78 +3,91 @@
   justify-content: center;
   padding: 0;
   height: 100%;
-  padding-top: 4rem;
   color: #dadedf; }
   .whats-showing-profile .push {
     height: 5rem; }
   .whats-showing-profile .profile-container {
     display: flex;
-    width: 1000px;
     height: 100%;
+    width: 100%;
     min-height: 100%; }
     .whats-showing-profile .profile-container .left-column {
-      width: 30%; }
+      display: flex;
+      flex-direction: column;
+      width: 25%; }
       .whats-showing-profile .profile-container .left-column .actor-info {
-        width: 230px; }
+        width: 80%; }
       .whats-showing-profile .profile-container .left-column .see-more {
         color: #62b0a2; }
       .whats-showing-profile .profile-container .left-column .profile-name {
-        width: 230px;
+        width: 80%;
         font-size: 1.5rem;
         font-weight: 600; }
       .whats-showing-profile .profile-container .left-column .biography {
         font-weight: 200; }
-      .whats-showing-profile .profile-container .left-column .profile-image-container .profile-image {
-        width: 230px;
-        height: 345px;
-        color: #dadedf;
-        background: #293237;
-        border: 2px solid #293237;
-        border-radius: 10px; }
+      .whats-showing-profile .profile-container .left-column .profile-image-container {
+        display: block;
+        position: relative;
+        width: 80%;
+        border-radius: .5rem; }
+        .whats-showing-profile .profile-container .left-column .profile-image-container .intrinsic {
+          display: block;
+          position: relative;
+          height: 0;
+          width: 100%;
+          padding-top: 100%;
+          background: #293237;
+          border-radius: .5rem; }
+          .whats-showing-profile .profile-container .left-column .profile-image-container .intrinsic.intrinsic--2x3 {
+            padding-top: 150%; }
+        .whats-showing-profile .profile-container .left-column .profile-image-container .profile-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: .5rem;
+          border: 1px solid #3a474e; }
     .whats-showing-profile .profile-container .right-column {
       display: flex;
       flex-direction: column;
-      width: 70%; }
+      width: 75%; }
 
 @media only screen and (max-width: 992px) {
   .whats-showing-profile .profile-container {
     flex-direction: column;
     align-items: center;
-    padding: .5rem;
-    width: 768px; }
+    padding: .5rem; }
     .whats-showing-profile .profile-container .left-column {
       display: flex;
+      flex-direction: row;
+      align-items: normal;
       width: 100%; }
       .whats-showing-profile .profile-container .left-column .actor-info {
         margin-left: .5rem;
         position: relative;
-        height: 180px;
+        align-self: center;
+        height: 160px;
         width: 100%; }
         .whats-showing-profile .profile-container .left-column .actor-info.auto-height {
           height: auto; }
       .whats-showing-profile .profile-container .left-column .profile-name {
         width: 100%;
         margin-bottom: 1rem; }
-      .whats-showing-profile .profile-container .left-column .profile-image-container .profile-image {
-        width: 185px;
-        height: 278px; }
+      .whats-showing-profile .profile-container .left-column .profile-image-container {
+        width: 30%; }
     .whats-showing-profile .profile-container .right-column {
       width: 100%; } }
 
 @media only screen and (max-width: 768px) {
   .whats-showing-profile .profile-container .left-column {
-    display: flex;
-    width: 100%; }
+    display: flex; }
     .whats-showing-profile .profile-container .left-column .actor-info {
       margin-left: .5rem;
       position: relative;
-      height: 180px;
       width: 100%; }
       .whats-showing-profile .profile-container .left-column .actor-info.auto-height {
-        height: auto; }
-    .whats-showing-profile .profile-container .left-column .profile-image-container .profile-image {
-      width: 120px;
-      height: 180px; } }
+        height: auto; } }
 
 @media only screen and (max-width: 480px) {
   .whats-showing-profile {

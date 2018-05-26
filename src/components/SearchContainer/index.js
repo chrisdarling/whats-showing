@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as searchActions from '../../actions/search';
+import Container from '../../shared/Container';
 import SearchResults from './SearchResults';
 import SearchSideBar from './SearchSideBar';
 import './style.css';
@@ -29,10 +30,10 @@ class SearchContainer extends Component {
     render() {
         const { search } =  this.props;
         return (
-            <div className={baseClass}>
+            <Container className={baseClass}>
                 <SearchSideBar className={baseClass} onClick={this.handleClick} {...search}  />
                 <SearchResults className={baseClass} onPageChange={this.handleNextPage} {...search} />
-            </div>
+            </Container>
         );
     }
 }

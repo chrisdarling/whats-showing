@@ -53,11 +53,27 @@
       visibility: visible;
       height: 100%;
       transition: width .15s, opacity .15s linear; }
-    .whats-showing-movie-media .media-container .video-item, .whats-showing-movie-media .media-container .image-item {
-      margin: 1rem; }
-    .whats-showing-movie-media .media-container .video-item {
+    .whats-showing-movie-media .media-container .intrinsic {
+      display: block;
+      position: relative;
+      height: 0;
       width: 100%;
-      height: 350px; }
+      padding-top: 100%;
+      background: #293237;
+      border-radius: .5rem; }
+      .whats-showing-movie-media .media-container .intrinsic.intrinsic--2x3 {
+        padding-top: 56%; }
+    .whats-showing-movie-media .media-container .video-item, .whats-showing-movie-media .media-container .image-item {
+      display: block;
+      position: relative;
+      width: 80%;
+      margin: .5rem; }
+    .whats-showing-movie-media .media-container .video, .whats-showing-movie-media .media-container .poster {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
     .whats-showing-movie-media .media-container .video {
       width: 100%;
       height: 100%; }
@@ -71,7 +87,7 @@
     bottom: -7px;
     margin-bottom: 1rem; }
   .whats-showing-movie-media .slick-track {
-    display: flex;
+    display: flex !important;
     overflow: hidden; }
   .whats-showing-movie-media .ant-carousel .slick-prev {
     left: -15px; }
@@ -80,19 +96,3 @@
   .whats-showing-movie-media i.anticon.anticon-right,
   .whats-showing-movie-media i.anticon.anticon-left {
     color: #dadedf; }
-
-@media only screen and (max-width: 992px) {
-  .whats-showing-movie-media .media-container .image-item {
-    margin: 1rem 5rem; } }
-
-@media only screen and (max-width: 768px) {
-  .whats-showing-movie-media .media-container .image-item {
-    margin: 1rem 8rem; } }
-
-@media only screen and (max-width: 480px) {
-  .whats-showing-movie-media .no-media .media-default {
-    height: 200px; }
-  .whats-showing-movie-media .media-container .image-item {
-    margin: 1rem; }
-  .whats-showing-movie-media .media-container .video-item {
-    height: 200px; } }

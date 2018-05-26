@@ -51,15 +51,22 @@ export default class ReccomendationContainer extends PureComponent {
         if (!results)
             return null;
 
-        return results.slice(0, POSTER_LIMIT).map((p,i) => <PosterCredit key={`${p.id}-${i}`} onClick={onClick} {...p} />);
+        return results.slice(0, POSTER_LIMIT).map((p,i) => <PosterCredit key={`${p.id}-${i}`} onClick={() => onClick(p.id)} {...p} />);
     }
 
     render() {
         const { loading, className, results } = this.props;
-        let content = (
+        const { settings: { slidesToShow } } = this.state;
+        let content = results && results.length >= slidesToShow 
+        ? (
             <Carousel className="rec-poster-container" {...this.state.settings}>
                 {this.renderPosters()}
             </Carousel>
+        )
+        : (
+            <div className="rec-poster-container" {...this.state.settings}>
+                {this.renderPosters()}
+            </div>
         );
 
         if (loading) {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as findActions from '../../actions/find';
+import Container from '../../shared/Container';
 import MovieResults from './MovieResults';
 import './style.css';
 
@@ -47,7 +48,12 @@ class FindMovieContainer extends Component {
     render() {
         const { find } = this.props;
         return (
-            <div className={baseClass}>
+            <Container className={baseClass}>
+                <div className={`${baseClass}-title-container`}>
+                    <h2 className="section-title">
+                        Discover and Find Movies
+                    </h2>
+                </div>
                 <MovieResults 
                     className={baseClass} 
                     onSortChange={this.handleSortChange} 
@@ -55,7 +61,7 @@ class FindMovieContainer extends Component {
                     onDecadeChange={this.handleDecadeChange} 
                     onPageChange={this.handleNextPage}
                     {...find} />
-            </div>
+            </Container>
         );
     }
 }

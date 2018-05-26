@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
 import clasnames from 'classnames';
 import * as profileActions from  '../../actions/profile';
+import Container from '../../shared/Container';
 import ProfileImage from './ProfileImage';
 import MovieCredtis from './MovieCredits';
 import CreditFilter from './CreditFilter';
@@ -57,26 +58,6 @@ class ProfileContainer extends Component {
         const { profile: { details: { biography } } } = this.props;
         return !!biography && biography.length > biographyLength;
     }
-    
-    handleChange = (jobFilter) => {
-        this.setState({ jobFilter });
-    }
-
-    handleSortChange = (sortFilter) => {
-        this.setState({ sortFilter });
-    }
-
-    handleDecadeChange = (decadeFilter) => {
-        this.setState(() => ({ decadeFilter, year: null }));
-    }
-
-    handleShowBiography = () => {
-        this.setState({ seeMore: !this.state.seeMore });
-    }
-
-    handleYearChange = (year) => {
-        this.setState(() => ({ year }));
-    }
 
     render() {
         const { profile: { details }, profile } = this.props;
@@ -84,7 +65,7 @@ class ProfileContainer extends Component {
         const infoClass = clasnames('actor-info', { 'auto-height': this.state.seeMore });
 
         return (
-            <div className={baseClass}>
+            <Container className={baseClass}>
                 <div className="profile-container">
                     <div className="left-column">
                         <ProfileImage className="profile-image-container" {...details} />
@@ -113,8 +94,28 @@ class ProfileContainer extends Component {
                             {...profile} />
                     </div>
                 </div>
-            </div>
+            </Container>
         );
+    }
+
+    handleChange = (jobFilter) => {
+        this.setState({ jobFilter });
+    }
+
+    handleSortChange = (sortFilter) => {
+        this.setState({ sortFilter });
+    }
+
+    handleDecadeChange = (decadeFilter) => {
+        this.setState(() => ({ decadeFilter, year: null }));
+    }
+
+    handleShowBiography = () => {
+        this.setState({ seeMore: !this.state.seeMore });
+    }
+
+    handleYearChange = (year) => {
+        this.setState(() => ({ year }));
     }
 }
 

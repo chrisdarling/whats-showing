@@ -1,0 +1,58 @@
+@import '../../config.scss';
+.credit-poster {
+    display: block;
+    position: relative;
+    // intrinsic.scss ------------------------
+    // An Intrinsic Ratio Component
+    // ---------------------------------------
+
+    .intrinsic {
+
+        // Make sure <picture> wrapper is set to block
+        // Max-width is governed by parentNode
+        display: block;
+    
+        // Intrinsic Ratio Box
+        position: relative;
+        height: 0;
+        width: 100%;
+        padding-top: 100%; // Default to square
+    
+        // Custom Styling
+        background: $color-theme-6;
+        border-radius: .5rem;
+        //border: 1px solid $color-theme-6;
+    
+        // Add as many ratios as you'd like...
+        &.intrinsic--2x3 {
+            padding-top: 150%;
+        }
+    }
+    .poster-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        border-radius: .5rem;
+        border: 1px solid $color-theme-6;
+    }
+    .placeholder {
+        opacity: 0.4;
+    }
+    .poster-title {
+        display: none;
+        position: absolute;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+        width: 70%;
+        right: 15%;
+        top: 30%;
+        color: $color-gray-200;
+        &.show {
+            display: block;
+        }
+    }
+}

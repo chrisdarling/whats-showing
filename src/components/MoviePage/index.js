@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as movieActions from '../../actions/movies';
+import Container from '../../shared/Container';
 import PosterSideBar from './PosterSideBar';
 import OverviewContainer from './OverviewContainer';
 import CastContainer from './CastContainer';
@@ -33,17 +34,14 @@ class MoviePage extends Component {
     render() {
         const baseClass = 'whats-showing-movie';
         const { movies: { movie, cast, videos, images, reccomendations } } = this.props;
-        const { loading, error, ...rest } = movie;
+        const { error, ...rest } = movie;
 
         if (this.state.hasError || error) 
             return <div>Sorry, there was an issue loading this Movie</div>;
 
         return (
-            <div className={baseClass}>
+            <Container className={baseClass}>
                 <div className={`${baseClass}-details`}>
-                    <div className="column-left">
-                        <PosterSideBar className="movie-side-bar" {...rest} />
-                    </div>
                     <div className="column-right">
                         <OverviewContainer className={baseClass} {...rest} {...cast} />
                         <CastContainer className={baseClass} {...cast} />
@@ -51,9 +49,12 @@ class MoviePage extends Component {
                         <DetailsContainer className={baseClass} {...rest} {...cast} />
                         <ReccomendationContainer className={baseClass} onClick={this.handleLinkClick} {...reccomendations} />
                     </div>
+                    <div className="column-left">
+                        <PosterSideBar className="movie-side-bar" onClick={this.handleLinkClick} {...rest} />
+                    </div>
                 </div>
                 <Push />
-            </div>
+            </Container>
         );
     }
 }

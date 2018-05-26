@@ -12,14 +12,17 @@
     &-wrapper {
         width: 24%;
         margin: .5%; 
+        margin-bottom: 8px;
     }
     .menu-item-link {
         display: block;
         position: relative;
         .section-title {
+            text-transform: uppercase;
             color: $color-gray-200;
             font-size: 1.5rem;
             margin: 0;
+            margin-bottom: .5rem;
             margin-left: .5rem;
             &:hover { 
                 color: $color-theme-5;
@@ -62,10 +65,13 @@
             height: 100%;
         }
 
+        .placeholder {
+            opacity: 0.6;
+        }
+
         .card-content {
             padding: .5rem;
             color: $color-gray-200;
-            //background: $color-gray-900;
             &:hover {
                 color: $color-theme-5;
             }

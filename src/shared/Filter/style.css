@@ -1,0 +1,31 @@
+.whats-showing-filter {
+  display: flex;
+  align-items: center;
+  margin: .5%;
+  margin-right: .75rem; }
+  .whats-showing-filter .filter-label {
+    font-size: .8rem;
+    margin-right: .5rem; }
+  .whats-showing-filter .sort-filter {
+    background: #293237;
+    color: #dadedf;
+    width: 12rem; }
+    .whats-showing-filter .sort-filter .ant-select-selection--single {
+      background: #293237; }
+      .whats-showing-filter .sort-filter .ant-select-selection--single .ant-select-arrow {
+        color: #dadedf; }
+  .whats-showing-filter .selector-wrapper {
+    margin-top: 1rem;
+    margin-bottom: .5rem; }
+
+@media only screen and (max-width: 768px) {
+  .whats-showing-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 32.5%;
+    margin-right: 1%; }
+    .whats-showing-filter .filter-label {
+      padding-bottom: .25rem; }
+    .whats-showing-filter .job-filter, .whats-showing-filter .sort-filter {
+      width: 100%; } }

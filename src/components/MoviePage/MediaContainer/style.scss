@@ -68,13 +68,44 @@
             visibility: visible;
             height: 100%;
             transition: width .15s, opacity .15s linear;
-        } 
-        .video-item, .image-item {
-            margin: 1rem;
         }
-        .video-item {
+
+        .intrinsic {
+
+            // Make sure <picture> wrapper is set to block
+            // Max-width is governed by parentNode
+            display: block;
+        
+            // Intrinsic Ratio Box
+            position: relative;
+            height: 0;
             width: 100%;
-            height: 350px;
+            padding-top: 100%; // Default to square
+        
+            // Custom Styling
+            background: $color-theme-6;
+            border-radius: .5rem;
+            //border: 1px solid $color-theme-6;
+        
+            // Add as many ratios as you'd like...
+            &.intrinsic--2x3 {
+                padding-top: 56%;
+            }
+        }
+
+        .video-item, .image-item {
+            display: block;
+            position: relative;
+            width: 80%;
+            margin: .5rem;
+        }
+
+        .video, .poster {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         .video {
@@ -99,7 +130,7 @@
     }
 
     .slick-track {
-        display: flex;
+        display: flex !important;
         overflow: hidden;
     }
 
@@ -114,44 +145,5 @@
     i.anticon.anticon-right,
     i.anticon.anticon-left {
         color: $color-gray-200;
-    }
-}
-
-@media only screen and (max-width : 992px) {
-    .whats-showing-movie-media {
-        .media-container {
-            .image-item {
-                margin: 1rem 5rem;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width : 768px) {
-    .whats-showing-movie-media {
-        .media-container {
-            .image-item {
-                margin: 1rem 8rem;
-            }
-
-        }
-    }
-}
-
-@media only screen and (max-width : 480px) {
-    .whats-showing-movie-media {
-        .no-media {
-            .media-default {
-                height: 200px;
-            }
-        }
-        .media-container {
-            .image-item {
-                margin: 1rem;
-            }
-            .video-item {
-                height: 200px;
-            }
-        }
     }
 }

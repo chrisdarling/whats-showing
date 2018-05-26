@@ -1,10 +1,11 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent } from 'react';
+import ImageComponent from '../../../shared/Image';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'antd';
 import { NextNavButton, PrevNavButton } from '../../../shared/Arrows';
 import Spinner from '../../../shared/Spinner';
-
-import PosterCredits from '../../../shared/PosterCredit';
+import { POSTER_IMG_URL, TINY_POSTER_URL } from '../../../constants';
+import { Tooltip } from 'antd';
 
 import './style.css';
 
@@ -17,7 +18,8 @@ export default class NowPlaying extends PureComponent {
             arrows: "true",
             speed: 500,
             slidesToShow: 6,
-            slidesToScroll: 1,
+            slidesToScroll: 6,
+            graggable: true,
             nextArrow: <NextNavButton />,
             prevArrow: <PrevNavButton />,
         }  
@@ -39,6 +41,7 @@ export default class NowPlaying extends PureComponent {
                     ...state.settings,
                     arrows: false,
                     slidesToShow: 3,
+                    slidesToScroll: 3,
                 },
             }));
         } else {
@@ -47,6 +50,7 @@ export default class NowPlaying extends PureComponent {
                     ...state.settings,
                     arrows: true,
                     slidesToShow: 6,
+                    slidesToScroll: 6,
                 },
             }));
         }
@@ -56,7 +60,26 @@ export default class NowPlaying extends PureComponent {
         const posterProps = this.props[this.props.type];
         let { results } = posterProps;
 
-        return results.slice(0, this.props.cardLimit).map((movie, i) => <PosterCredits key={`${movie.id}-${i}`} className={baseClass} {...movie} />)
+        return results.slice(0, this.props.cardLimit).map((movie, i) => 
+            <ImageComponent
+                key={`${movie.id}-${i}`}
+                imagePath={movie.poster_path}
+                placeholderURL={'/assets/placeholder.jpg'}
+                defaultURL={POSTER_IMG_URL}
+                mobileURL={TINY_POSTER_URL}
+                imageClass="poster-image"
+                render={({ onError, onLoad, source }) => {
+                    return (
+                        <Tooltip placement="top" title={movie.title}>
+                            <Link to={`/movies/movie/${movie.id}`} className="credit-poster">
+                                <picture className="intrinsic intrinsic--2x3">
+                                    <img src={source} className="poster-image" onError={onError} onLoad={onLoad} alt="poster" />
+                                </picture>
+                            </Link>
+                        </Tooltip>
+                    ) 
+                }}/>
+        )   
     }
 
     render() {

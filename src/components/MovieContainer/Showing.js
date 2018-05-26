@@ -14,7 +14,7 @@ class ShowingMovieContainer extends Component {
     render() {
         const { movies } = this.props;
         return (
-            <SectionContainer type="showing" title="Now Playing" section="movies" cardLimit={POSTER_CARD_LIMIT} {...movies} />
+            <SectionContainer type="showing" title="Now Showing Movies" section="movies" cardLimit={POSTER_CARD_LIMIT} {...movies} />
         );
     }
 }

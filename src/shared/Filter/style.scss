@@ -1,0 +1,44 @@
+@import '../../config.scss';
+
+.whats-showing-filter {
+    display: flex;
+    align-items: center;
+    margin: .5%;
+    margin-right: .75rem;
+    .filter-label {
+        font-size: .8rem;
+        margin-right: .5rem;
+    }
+    .sort-filter {
+        background: $color-theme-6;
+        color: $color-gray-200;
+        width: 12rem;
+        .ant-select-selection--single {
+            background: $color-theme-6;
+            .ant-select-arrow {
+                color: $color-gray-200;
+            }
+        }
+    }
+
+    .selector-wrapper {
+        margin-top: 1rem;
+        margin-bottom: .5rem;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .whats-showing-filter {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 32.5%;
+        margin-right: 1%;
+        .filter-label {
+            padding-bottom: .25rem;
+        }
+        .job-filter, .sort-filter {
+            width: 100%;
+        }
+    }
+}

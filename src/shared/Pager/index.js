@@ -1,5 +1,5 @@
 import React,  { Component } from 'react';
-import { Button, Icon } from 'antd';
+import { Button } from 'antd';
 import './style.css';
 
 const baseClass = 'whats-showing-pager';
@@ -43,11 +43,11 @@ export default class Pager extends Component {
         return (
             <div className={baseClass}>
                 <Button type="default" className="prev" onClick={this.handlePrevClick}>
-                    <Icon type="left" />Prev
+                    Prev
                 </Button>
                 <div className="page">Page {this.Page} of {this.TotalPages}</div>
                 <Button type="default" className="more" onClick={this.handleMoreClick}>
-                    More<Icon type="right" />
+                    More
                 </Button>
             </div>
         );
