@@ -1,9 +1,9 @@
-import { PureComponent } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import './style.css';
 
-export default class ImageComponent extends PureComponent {
+export default class ImageComponent extends Component {
     state = {
         imageStatus: 'loading',
         imageError: false,
@@ -20,7 +20,6 @@ export default class ImageComponent extends PureComponent {
     }
 
     static defaultProps = {
-        alt: 'image',
         loading: false,
     }
 

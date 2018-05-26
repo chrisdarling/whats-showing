@@ -12,11 +12,12 @@ export default class PosterSideBar extends Component {
     }
 
     render() {
-        const { className, title, status, release_date } = this.props;
+        const { className, title, status, release_date, id } = this.props;
         const releaseDate = release_date ? moment(release_date, 'YYYY MM DD').format('Do MMM YYYY') : null;
         return (
             <div className={className}>
-                <PosterCredit {...this.props} />
+                {id && <PosterCredit {...this.props} />}
+                {!id && <PosterCredit />}
                 <div className="details">
                     <div className="title">{title}</div>
                     <div className="genres">

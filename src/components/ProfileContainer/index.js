@@ -60,7 +60,7 @@ class ProfileContainer extends Component {
     }
 
     render() {
-        const { profile: { details }, profile } = this.props;
+        const { profile: { details, loading }, profile } = this.props;
         const { biography, name } = details; 
         const infoClass = clasnames('actor-info', { 'auto-height': this.state.seeMore });
 
@@ -68,7 +68,8 @@ class ProfileContainer extends Component {
             <Container className={baseClass}>
                 <div className="profile-container">
                     <div className="left-column">
-                        <ProfileImage className="profile-image-container" {...details} />
+                        {!loading && <ProfileImage className="profile-image-container" {...details} />}
+                        {loading && <ProfileImage className="profile-image-container" />}
                         <div className={infoClass} onClick={this.handleShowBiography}>
                             <div className="profile-name">{name}</div>
                             <div className="biography">{displayBiography(biography, this.state.seeMore)}</div>

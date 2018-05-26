@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { IMG_URL } from '../../constants';
 import ImageComponent from '../../shared/Image';
 
-export default class ProfileTop extends Component {
+export default class ProfileImage extends Component {
     render() {
         const { className, profile_path } = this.props;
         return (
