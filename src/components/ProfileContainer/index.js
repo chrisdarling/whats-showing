@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
 import clasnames from 'classnames';
 import * as profileActions from  '../../actions/profile';
-import Container from '../../shared/Container';
+import { Container } from 'shared';
 import ProfileImage from './ProfileImage';
 import MovieCredtis from './MovieCredits';
 import CreditFilter from './CreditFilter';

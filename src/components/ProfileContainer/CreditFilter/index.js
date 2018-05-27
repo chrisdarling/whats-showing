@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import { Select } from 'antd';
-import Filter from '../../../shared/Filter';
+import { Filter } from 'shared';
 import YearSelector from './YearSelector';
 import { decades } from '../../../constants';
 import './style.css';
 
 const sortOptions = ['Popularity', 'Date desc', 'Date asc', 'Title'];
-const { Option } = Select;
-
 export default class CreditFilter extends Component {
     renderTitle = () => {
         const { value } = this.props;
@@ -25,8 +22,8 @@ export default class CreditFilter extends Component {
             default:
                 return 'FILMS FEATURING';
         }
-       
     }
+    
     render() {
         const { className, handleChange, onSortChange, onYearChange, year, value, name, sortFilter, jobs, decadeFilter, onDecadeChange } = this.props;
 
@@ -41,7 +38,7 @@ export default class CreditFilter extends Component {
                         {sortOptions.map(filter => <Filter.Option key={filter} value={filter}>{filter}</Filter.Option>)}
                     </Filter>
                     <Filter defaultValue={'All'} value={decadeFilter} options={decades} onChange={onDecadeChange} label="Decade">
-                        <Option key="decade-default" value={'All'}>All</Option>
+                        <Filter.Option key="decade-default" value={'All'}>All</Filter.Option>
                         {decades.map(filter => <Filter.Option key={filter} value={filter}>{filter}</Filter.Option>)}
                     </Filter>
                 </div>

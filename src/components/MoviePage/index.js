@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as movieActions from '../../actions/movies';
-import Container from '../../shared/Container';
+import { Container, Push } from 'shared';
 import PosterSideBar from './PosterSideBar';
 import OverviewContainer from './OverviewContainer';
 import CastContainer from './CastContainer';
 import MediaContainer from './MediaContainer';
 import DetailsContainer from './DetailsContainer';
 import ReccomendationContainer from './ReccomendationContainer';
-import Push from '../../shared/Push';
 import './style.css';
 
 class MoviePage extends Component {

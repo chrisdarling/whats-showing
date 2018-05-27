@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as findActions from '../../actions/find';
-import Container from '../../shared/Container';
+import { Container } from 'shared';
 import MovieResults from './MovieResults';
 import './style.css';
 

@@ -1,15 +1,12 @@
 import React, { PureComponent } from 'react';
-import ImageComponent from '../../../shared/Image';
+import { PosterCredit, Arrows, Spinner } from 'shared';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'antd';
-import { NextNavButton, PrevNavButton } from '../../../shared/Arrows';
-import Spinner from '../../../shared/Spinner';
-import { POSTER_IMG_URL, TINY_POSTER_URL } from '../../../constants';
-import { Tooltip } from 'antd';
 
 import './style.css';
 
 const baseClass = 'whats-showing-now-playing';
+const { NextNavButton, PrevNavButton } = Arrows;
 
 export default class NowPlaying extends PureComponent {
     state = {
@@ -60,26 +57,7 @@ export default class NowPlaying extends PureComponent {
         const posterProps = this.props[this.props.type];
         let { results } = posterProps;
 
-        return results.slice(0, this.props.cardLimit).map((movie, i) => 
-            <ImageComponent
-                key={`${movie.id}-${i}`}
-                imagePath={movie.poster_path}
-                placeholderURL={'/assets/placeholder.jpg'}
-                defaultURL={POSTER_IMG_URL}
-                mobileURL={TINY_POSTER_URL}
-                imageClass="poster-image"
-                render={({ onError, onLoad, source }) => {
-                    return (
-                        <Tooltip placement="top" title={movie.title}>
-                            <Link to={`/movies/movie/${movie.id}`} className="credit-poster">
-                                <picture className="intrinsic intrinsic--2x3">
-                                    <img src={source} className="poster-image" onError={onError} onLoad={onLoad} alt="poster" />
-                                </picture>
-                            </Link>
-                        </Tooltip>
-                    ) 
-                }}/>
-        )   
+        return results.slice(0, this.props.cardLimit).map((movie, i) => <PosterCredit key={`${movie.id}-${i}`} {...movie} />)   
     }
 
     render() {

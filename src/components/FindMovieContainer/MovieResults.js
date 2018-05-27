@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PosterCredit from '../../shared/PosterCredit';
+import { PosterCredit } from 'shared';
 import ResultFilter from './ResultFilter';
 import { Pagination } from 'antd';
 

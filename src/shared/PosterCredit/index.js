@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Tooltip } from 'antd';
 import { POSTER_IMG_URL, TINY_POSTER_URL } from '../../constants';
-import ImageComponent from '../Image';
+import { ImageComponent } from 'shared';
 import './style.css';
 
 export default class PosterCredit extends Component {
@@ -17,12 +17,15 @@ export default class PosterCredit extends Component {
                         loading={loading}
                         defaultURL={POSTER_IMG_URL}
                         mobileURL={TINY_POSTER_URL}
-                        render={({ onError, onLoad, source }) => (
-                            <picture className="intrinsic intrinsic--2x3" onClick={onClick}>
-                                <img src={source} className="poster-image" onError={onError} onLoad={onLoad} alt="poster" />
-                            </picture>
-                        )}
-                    />
+                    >
+                        {
+                            ({ onError, onLoad, source }) => (
+                                <picture className="intrinsic intrinsic--2x3" onClick={onClick}>
+                                    <img src={source} className="poster-image" onError={onError} onLoad={onLoad} alt="poster" />
+                                </picture>
+                            )
+                        }
+                    </ImageComponent>
                     <div className="poster-title">{title}</div>
                 </Link>
             </Tooltip>

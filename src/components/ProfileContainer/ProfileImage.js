@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { IMG_URL } from '../../constants';
-import ImageComponent from '../../shared/Image';
+import { ImageComponent } from 'shared';
 
 export default class ProfileImage extends Component {
     render() {
@@ -12,12 +12,15 @@ export default class ProfileImage extends Component {
                     placeholderURL="/assets/profile.png"
                     defaultURL={IMG_URL}
                     imageClass="profile-image"
-                    render={({ onError, onLoad, source }) => (
-                        <picture className="intrinsic intrinsic--2x3">
-                            <img src={source} className="profile-image" onError={onError} onLoad={onLoad} alt="profile" />
-                        </picture>
-                    )}
-                />
+                >
+                    {
+                        ({ onError, onLoad, source }) => (
+                            <picture className="intrinsic intrinsic--2x3">
+                                <img src={source} className="profile-image" onError={onError} onLoad={onLoad} alt="profile" />
+                            </picture>
+                        )
+                    }
+                </ImageComponent>
             </div>
         );
     }

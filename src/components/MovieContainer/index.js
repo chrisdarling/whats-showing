@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Container from '../../shared/Container';
-//import AsyncComponent from '../../shared/AsyncComponent';
+//import { AsyncComponent } from 'shared';
 import PopularMovieContainer from './Popular';
 import ShowingMovieContainer from './Showing';
 import UpcomingMovieContainer from './Upcoming';

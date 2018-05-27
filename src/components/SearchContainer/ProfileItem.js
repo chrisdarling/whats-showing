@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { POSTER_IMG_URL } from '../../constants';
-import ImageComponent from '../../shared/Image';
+import { ImageComponent } from 'shared';
 import './style.css';
 
 export default class PosterCredit extends Component {
@@ -15,12 +15,15 @@ export default class PosterCredit extends Component {
                         placeholderURL="/assets/profile.png"
                         defaultURL={POSTER_IMG_URL}
                         imageClass="profile-image"
-                        render={({ onError, onLoad, source }) => (
-                            <picture className="intrinsic intrinsic--2x3">
-                                <img src={source} className="profile-image" onError={onError} onLoad={onLoad} alt="profile" />
-                            </picture>
-                        )}
-                    />
+                    >
+                        {
+                            ({ onError, onLoad, source }) => (
+                                <picture className="intrinsic intrinsic--2x3">
+                                    <img src={source} className="profile-image" onError={onError} onLoad={onLoad} alt="profile" />
+                                </picture>
+                            )
+                        }
+                    </ImageComponent>
                 </div>
                 <div className="profile-info">
                     <div className="name">{name}</div>

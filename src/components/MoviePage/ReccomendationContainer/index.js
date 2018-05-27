@@ -1,16 +1,14 @@
 import React, { PureComponent } from 'react';
 import { Carousel } from 'antd';
-import { NextNavButton, PrevNavButton } from '../../../shared/Arrows';
-import Spinner from '../../../shared/Spinner';
-import PosterCredit from '../../../shared/PosterCredit';
+import { Arrows, Spinner, PosterCredit } from 'shared';
 import './style.css';
 
 const POSTER_LIMIT = 10;
+const { NextNavButton, PrevNavButton } = Arrows;
 export default class ReccomendationContainer extends PureComponent {
     state = {
         settings: {
-            infinite: true,
-            arrows: "true",
+            arrows: true,
             speed: 500,
             slidesToShow: 6,
             slidesToScroll: 1,

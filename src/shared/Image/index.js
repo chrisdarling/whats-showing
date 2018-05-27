@@ -13,6 +13,7 @@ export default class ImageComponent extends Component {
 
     static propTypes = {
         defaultURL: PropTypes.string.isRequired,
+        children: PropTypes.func.isRequired,
         mobileURL: PropTypes.string,
         imagePath: PropTypes.string,
         placeholderURL: PropTypes.string,
@@ -53,7 +54,7 @@ export default class ImageComponent extends Component {
     }
 
     render() {
-        return this.props.render({ 
+        return this.props.children({ 
             ...this.state,
             onError: this.handleError,
             onLoad: this.handleLoad,

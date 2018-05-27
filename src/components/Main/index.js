@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import SectionContainer from '../SectionContainer';
-import Container from '../../shared/Container';
+import { Container } from 'shared';
 import NowPlaying from './NowPlaying';
 import * as movieActions from '../../actions/movies';
 

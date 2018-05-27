@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import ImageComponent from '../../shared/Image';
+import { ImageComponent } from 'shared';
 import { LARGE_IMG_URL, POSTER_IMG_URL } from '../../constants';
 import moment from 'moment';
 
@@ -21,15 +21,17 @@ export default class PosterCard extends Component {
                 mobileURL={POSTER_IMG_URL}
                 placeholderURL="/assets/placeholder-1200.png"
                 imageClass="backdrop-image"
-                render={({ onError, onLoad, source }) => (
-                    <Link to={`/movies/movie/${id}`} className="menu-item-link">
-                        <picture key="placeholder-backdrop" className="intrinsic intrinsic--2x3">
-                            <img src={source} className="backdrop-image" onError={onError} onLoad={onLoad} alt="backdrop" />
-                        </picture>
-                    </Link>
-                )}
-            
-            />
+            >
+                {
+                    ({ onError, onLoad, source }) => (
+                        <Link to={`/movies/movie/${id}`} className="menu-item-link">
+                            <picture key="placeholder-backdrop" className="intrinsic intrinsic--2x3">
+                                <img src={source} className="backdrop-image" onError={onError} onLoad={onLoad} alt="backdrop" />
+                            </picture>
+                        </Link>
+                    )
+                }
+            </ImageComponent>
         )
     }
 

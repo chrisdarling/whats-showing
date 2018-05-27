@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-export default function Spinner(props) {
+export default function Spinner() {
     return (
         <div className="whats-showing-spinner">
             <svg width="100" height="80" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" fill="#dadedf">

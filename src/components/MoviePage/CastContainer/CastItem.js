@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { PROFILE_IMG_URL } from '../../../constants';
-import ImageComponent from '../../../shared/Image';
+import { ImageComponent } from 'shared';
 
 export default class CastItem extends Component {
     render() {
@@ -14,12 +14,15 @@ export default class CastItem extends Component {
                     placeholderURL="/assets/profile.png"
                     defaultURL={PROFILE_IMG_URL}
                     imageClass="casting-person-image"
-                    render={({ onError, onLoad, source }) => (
-                        <picture>
-                            <img src={source} className="casting-person-image" onError={onError} onLoad={onLoad} alt="profile" />
-                        </picture>
-                    )}
-                />
+                >
+                    {
+                        ({ onError, onLoad, source }) => (
+                            <picture>
+                                <img src={source} className="casting-person-image" onError={onError} onLoad={onLoad} alt="profile" />
+                            </picture>
+                        )
+                    }
+                </ImageComponent>
                 <div className="casting-info">
                     <span className="casting-name">{name}</span>
                     <span className="character">{character}</span>

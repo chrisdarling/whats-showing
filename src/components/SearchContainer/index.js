@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as searchActions from '../../actions/search';
-import Container from '../../shared/Container';
+import { Container } from 'shared';
 import SearchResults from './SearchResults';
 import SearchSideBar from './SearchSideBar';
 import './style.css';

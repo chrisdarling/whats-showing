@@ -6,39 +6,36 @@ import SlideMenu from './SlideMenu';
 import * as searchActions from '../../actions/search';
 import NavigationSearch from './NavigationSearch';
 import MovieMenu from './MovieMenu';
+import { Toggle } from 'shared';
 import './style.css';
 
+const baseClass = 'whats-showing-navbar';
+
 class NavBar extends Component {
-    state = {
-        open: false,
-    }
-
-    handleOpen = () => {
-        this.setState(state => ({ open: !state.open }));
-    }
-
     render() {
-        const baseClass = 'whats-showing-navbar';
-        const menuIconType = this.state.open ? 'menu-fold': 'menu-unfold';
         return (
-            <header className={baseClass}>
-                <div className={`${baseClass}-container`}>
-                    <div className="nav-bar-left hide-lg" onClick={this.handleOpen}>
-                        <Icon className="menu-icon" type={menuIconType} />
-                    </div>
-                    <div className="title-container">
-                        <Link to="/" className="menu-item-link">
-                            <Icon type="play-circle-o" />
-                            <h1 className="title">WHAT'S SHOWING</h1>
-                        </Link>
-                    </div>
-                    <div className="nav-bar-right">                        
-                        <MovieMenu />
-                        <NavigationSearch {...this.props}  />
-                    </div>
-                </div>
-                <SlideMenu className={baseClass} toggleMenu={this.handleOpen} onChange={this.handleChange} open={this.state.open} />
-            </header>
+            <Toggle>
+                {({ on: open, toggle }) => (
+                    <header className={baseClass}>
+                        <div className={`${baseClass}-container`}>
+                            <div className="nav-bar-left hide-lg" onClick={toggle}>
+                                <Icon className="menu-icon" type={open ? 'menu-fold': 'menu-unfold'} />
+                            </div>
+                            <div className="title-container">
+                                <Link to="/" className="menu-item-link">
+                                    <Icon type="play-circle-o" />
+                                    <h1 className="title">WHAT'S SHOWING</h1>
+                                </Link>
+                            </div>
+                            <div className="nav-bar-right">                        
+                                <MovieMenu />
+                                <NavigationSearch {...this.props}  />
+                            </div>
+                        </div>
+                        <SlideMenu className={baseClass} toggleMenu={toggle} onChange={this.handleChange} open={open} />
+                    </header>
+                )}
+            </Toggle>
         );
     }
 }
