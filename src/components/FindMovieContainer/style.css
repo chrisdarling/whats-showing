@@ -9,6 +9,8 @@
       color: #dadedf;
       margin: 0; }
   .whats-showing-find-movies-results {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     padding: 0 .5rem; }
     .whats-showing-find-movies-results .result-items {

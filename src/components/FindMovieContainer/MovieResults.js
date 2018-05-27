@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PosterCredit from '../../shared/PosterCredit';
 import ResultFilter from './ResultFilter';
-import Pager from '../../shared/Pager';
+import { Pagination } from 'antd';
 
 export default class MovieResults extends Component {
     renderPosters = () => {
@@ -10,15 +10,17 @@ export default class MovieResults extends Component {
 
         return results.map((r,i) => <PosterCredit key={`${r.id}-${i}`} {...r} />);
     }
+
     render() {
-        const { className, onPageChange, ...movies } = this.props;
+        const { className, onPageChange, total_results, page } = this.props;
+        const current = parseInt(page, 10);
         return (
             <div className={`${className}-results`}>
                 <ResultFilter {...this.props} />
                 <div className="result-items">
                     {this.renderPosters()}
                 </div>
-                <Pager type="movies" onPageChange={onPageChange} movies={movies} />
+                <Pagination current={current} size="small" total={total_results} pageSize={20} onChange={onPageChange} />
             </div>
         );
     }

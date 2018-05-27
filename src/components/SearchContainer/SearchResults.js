@@ -2,9 +2,19 @@ import React, { Component } from 'react';
 import Spinner from '../../shared/Spinner';
 import PosterCredit from '../../shared/PosterCredit';
 import ProfileItem from './ProfileItem';
-import Pager from '../../shared/Pager';
+import { Pagination } from 'antd';
 
 export default class SearchResults extends Component {
+    get Page() {
+        const { type, movies, people } = this.props;
+        return type === 'movies' ? movies && movies.page  : people && people.page;
+    }
+
+    get Total() {
+        const { type, movies, people } = this.props;
+        return type === 'movies' ? movies && movies.total_results : people && people.total_results;
+    }
+
     renderSearchItems = () => {
         const { movies: { results: movieResults }, people: { results: peopleResults }, type } = this.props;
         const results = type === 'movies' ? movieResults : peopleResults;
@@ -29,12 +39,9 @@ export default class SearchResults extends Component {
         const { 
             className, 
             searchString, 
-            type, 
-            movies, 
             movies: { 
                 loading,
             }, 
-            people, 
             onPageChange 
         } = this.props;
 
@@ -48,11 +55,13 @@ export default class SearchResults extends Component {
             );
         }
 
+        const current = Number.parseInt(this.Page, 10) || 1;
+
         return (
             <div className={`${className}-results`}>
                 <div className="result-header">SEARCH RESULTS FOR: <span className="search-string">{`${searchString.toUpperCase()}`}</span></div>
                 {content}
-                <Pager type={type} onPageChange={onPageChange} movies={movies} people={people} />
+                <Pagination size="small" current={current} pageSize={20} total={this.Total} onChange={onPageChange} />
             </div>
         );
     }
