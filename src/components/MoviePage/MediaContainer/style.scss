@@ -2,40 +2,16 @@
 
 .whats-showing-movie-media {
     margin: 0;
+    margin-bottom: 1rem;
     color: $color-gray-200;
     .media-header {
         margin-bottom: 1rem;
     }
     .media-title {
         margin: 0;
-        padding: 0;
+        padding: 0 0 1rem 0;
         font-size: 1.5rem;
         color: $color-gray-200;
-    }
-    .media-tabs {
-        padding: 0;
-        margin: 0;
-        display: flex;
-        list-style: none;
-        line-height: 46px;
-        border-bottom: 1px solid $color-gray-300;
-    }
-
-    .media-tab {
-        font-size: 1rem;
-        margin: 0;
-        padding: 0 1rem;
-        color: $color-gray-200;
-        cursor: pointer;
-        &:hover {
-            font-weight: 700;
-            color: $color-theme-5;
-        }
-        &.active {
-            font-weight: 700;
-            color: $color-theme-5;
-            border-bottom: 2px solid $color-theme-5;
-        }
     }
 
     .no-media {
@@ -59,45 +35,40 @@
         display: flex;
         padding-bottom: 1rem;
         opacity: 0;
-        height: 0;
-        visibility: hidden;
-        transition: width .15s, opacity .15s linear;
-        &.show-video,
-        &.show-image {
-            opacity: 1;
-            visibility: visible;
-            height: 100%;
-            transition: width .15s, opacity .15s linear;
+        opacity: 1;
+        visibility: visible;
+        height: 100%;
+
+        &.images {
+            flex-wrap: wrap;
         }
-
+          
         .intrinsic {
-
-            // Make sure <picture> wrapper is set to block
-            // Max-width is governed by parentNode
             display: block;
-        
-            // Intrinsic Ratio Box
             position: relative;
             height: 0;
             width: 100%;
-            padding-top: 100%; // Default to square
-        
-            // Custom Styling
+            padding-top: 100%;
             background: $color-theme-6;
             border-radius: .5rem;
-            //border: 1px solid $color-theme-6;
-        
-            // Add as many ratios as you'd like...
             &.intrinsic--2x3 {
                 padding-top: 56%;
             }
         }
 
-        .video-item, .image-item {
+        .video-item {
             display: block;
             position: relative;
             width: 80%;
             margin: .5rem;
+        }
+
+        .image-item { 
+            display: block;
+            position: relative;
+            width: 25%;
+            margin: 0;
+            padding: .5rem .5rem 0 0;
         }
 
         .video, .poster {
@@ -146,5 +117,17 @@
     i.anticon.anticon-right,
     i.anticon.anticon-left {
         color: $color-gray-200;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .whats-showing-movie-media {
+        .media-container {
+            .image-item { 
+                // width: 25%;
+                // margin: 0;
+                // padding: .5rem .5rem 0;
+            }
+        }
     }
 }

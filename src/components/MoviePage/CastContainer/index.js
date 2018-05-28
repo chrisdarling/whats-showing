@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CastItem from './CastItem';
 import './style.css';
 
-const CAST_LIMIT = 20;
+const CAST_LIMIT = 8;
 
 export default class CastContainer extends Component {
     renderLoadingItems = () => {
@@ -27,7 +27,7 @@ export default class CastContainer extends Component {
 
         return (
             <div className={`${className}-casting`}>
-                <h2 className="casting-title">Cast</h2>
+                <h2 className="casting-title">Top Billed Cast</h2>
                 <div className="casting-items">
                     {content()}
                 </div>

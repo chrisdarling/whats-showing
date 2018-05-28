@@ -18,7 +18,7 @@
         color: $color-theme-5;
         text-transform: uppercase;
     }
-    .runtime-container {
+    .detail-container {
         display: flex;
         width: 100%;
         padding-top: 1rem;
@@ -26,38 +26,19 @@
         .title {
             width: 30%;
         }
-        .runtime-parent {
-            width: 70%;
-        }
-        .runtime {
-            color: $color-gray-200;
-            background: $color-theme-6;
-            font-size: .8rem;
-            padding: .5rem;
-            border-radius: 5px;
-        }
-    }
-
-    .language-container {
-        display: flex;
-        width: 100%;
-        padding-top: 1rem;
-        font-weight: 200;
-        .title {
-            width: 30%;
-        }
-        .languages {
+        .detail-parent {
             display: flex;
             flex-wrap: wrap;
             width: 70%;
-            .language {
-                margin-right: .5rem;
-                color: $color-gray-200;
-                background: $color-theme-6;
-                font-size: .8rem;
-                padding: .5rem;
-                border-radius: 5px;
-            }
+        }
+        .detail {
+            margin-right: .5rem;
+            margin-left: .5rem;
+            color: $color-gray-200;
+            background: $color-theme-6;
+            font-size: 1rem;
+            padding: .5rem;
+            border-radius: 5px;
         }
     }
 }

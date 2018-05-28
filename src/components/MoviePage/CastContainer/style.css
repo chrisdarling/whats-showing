@@ -1,50 +1,61 @@
 .whats-showing-movie-casting {
-  margin: .5rem 0;
+  margin: .5rem 0 2rem 0;
   color: #dadedf; }
   .whats-showing-movie-casting .casting-title {
-    margin: 0 0 .5rem 0;
-    padding: 0;
+    margin: 0;
+    padding: .5rem 0 1rem 0;
     font-size: 1.5rem;
     font-weight: 500;
     color: #dadedf; }
   .whats-showing-movie-casting .casting-items {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding-bottom: .5rem; }
     .whats-showing-movie-casting .casting-items .casting-item {
       display: flex;
-      flex-direction: column;
       align-items: center;
       color: #dadedf;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      margin: .5rem .5rem .5rem 0;
-      width: 92px; }
+      margin: 0;
+      padding: .5rem .5rem 1rem 0;
+      width: 50%; }
+      .whats-showing-movie-casting .casting-items .casting-item:hover {
+        background: #293237; }
     .whats-showing-movie-casting .casting-items .casting-person-image {
       width: 92px;
-      height: 138px;
+      height: 92px;
       color: #dadedf;
       background: #293237;
       border: 2px solid #293237;
-      border-radius: 10px; }
+      border-radius: 50%; }
     .whats-showing-movie-casting .casting-items .casting-info {
       display: flex;
-      flex-direction: column;
+      align-items: center;
       padding: .5rem; }
     .whats-showing-movie-casting .casting-items .casting-name {
-      text-align: center;
-      font-weight: 600;
-      font-size: .6rem;
+      font-weight: 500;
+      font-size: 1.3rem;
       color: #f2f3f4; }
     .whats-showing-movie-casting .casting-items .character {
-      text-align: center;
-      font-size: .6rem;
+      font-size: 1rem;
       color: #c1c7c9; }
 
 @media only screen and (max-width: 480px) {
-  .whats-showing-movie-casting .casting-items .casting-item {
-    width: 92px; }
-  .whats-showing-movie-casting .casting-items .casting-person-image {
-    width: 92px;
-    height: 138px; } }
+  .whats-showing-movie-casting .casting-items {
+    flex-wrap: none;
+    flex-direction: column; }
+    .whats-showing-movie-casting .casting-items .casting-item {
+      width: 100%; }
+    .whats-showing-movie-casting .casting-items .casting-name {
+      font-weight: 500;
+      font-size: 1.1rem;
+      color: #f2f3f4; }
+    .whats-showing-movie-casting .casting-items .character {
+      text-align: center;
+      font-size: .8rem;
+      color: #c1c7c9; }
+    .whats-showing-movie-casting .casting-items .casting-person-image {
+      width: 45px;
+      height: 45px; } }

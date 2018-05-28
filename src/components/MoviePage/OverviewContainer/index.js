@@ -1,50 +1,42 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
+const DetailItem = ({ title, children }) => (
+    <div className="detail-container">
+        <div className="title">{title}</div>
+        <div className="detail-parent">
+            {children}
+        </div>
+    </div>
+);
+
 export default class OverviewContainer extends Component {
-    renderRunTime = () => {
-        const { runtime } = this.props;
-
-        return (
-            <div className="runtime-container">
-                <div className="title">Runtime</div>
-                <div className="runtime-parent">
-                    <span className="runtime">{runtime ? `${runtime}mins` : "N/A"}</span>
-                </div>
-            </div>
-        );
-    }
-    
-    renderLanguages = () => {
-        const { spoken_languages } = this.props;
-        let languages = [];
-
-        if (!!spoken_languages) {
-            spoken_languages.forEach(s =>  {
-                if (!!s.name)
-                    languages.push(<div key={s.name} className="language">{s.name}</div>);
-            });
-        }
-        
-        return (
-            <div className="language-container">
-                <div className="title">Languages</div>
-                <div className="languages">
-                    {languages}
-                </div>
-            </div>
-        );
-    }
+    static defaultProps = {
+        spoken_languages: [],
+        crew: [],
+    } 
 
     render() {
-        const { className, overview, tagline } = this.props;
+        const { className, overview, tagline, runtime, spoken_languages, crew } = this.props;
+        const directors = crew.filter(c => c.job === 'Director');
         return (
             <div className={`${className}-overview`}>
                 <div className="tagline">{tagline}</div>
                 <div className="overview">
                     <div className="overview-info">{overview}</div>
-                    {this.renderRunTime()}
-                    {this.renderLanguages()}
+                    <DetailItem title="Director">
+                        {directors.map((d, i) => 
+                            <Link to={`/profile/${d.id}`} key={`${d.name}-${i}`} className="detail">
+                                <div>{d.name}</div>
+                            </Link>)}
+                    </DetailItem>
+                    <DetailItem title="Runtime">
+                        <span className="detail">{runtime ? `${runtime}mins` : "N/A"}</span>
+                    </DetailItem>
+                    <DetailItem title="Languages">
+                        {spoken_languages.map((s,i) => <div key={`${s.name || 'N/A'}-${i}`} className="detail">{s.name || 'N/A'}</div>)}
+                    </DetailItem>
                 </div>
             </div>
         );

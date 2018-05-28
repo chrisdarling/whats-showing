@@ -1,33 +1,14 @@
 .whats-showing-movie-media {
   margin: 0;
+  margin-bottom: 1rem;
   color: #dadedf; }
   .whats-showing-movie-media .media-header {
     margin-bottom: 1rem; }
   .whats-showing-movie-media .media-title {
     margin: 0;
-    padding: 0;
+    padding: 0 0 1rem 0;
     font-size: 1.5rem;
     color: #dadedf; }
-  .whats-showing-movie-media .media-tabs {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    list-style: none;
-    line-height: 46px;
-    border-bottom: 1px solid #c1c7c9; }
-  .whats-showing-movie-media .media-tab {
-    font-size: 1rem;
-    margin: 0;
-    padding: 0 1rem;
-    color: #dadedf;
-    cursor: pointer; }
-    .whats-showing-movie-media .media-tab:hover {
-      font-weight: 700;
-      color: #62b0a2; }
-    .whats-showing-movie-media .media-tab.active {
-      font-weight: 700;
-      color: #62b0a2;
-      border-bottom: 2px solid #62b0a2; }
   .whats-showing-movie-media .no-media {
     display: flex;
     padding-bottom: 1rem;
@@ -45,14 +26,11 @@
     display: flex;
     padding-bottom: 1rem;
     opacity: 0;
-    height: 0;
-    visibility: hidden;
-    transition: width .15s, opacity .15s linear; }
-    .whats-showing-movie-media .media-container.show-video, .whats-showing-movie-media .media-container.show-image {
-      opacity: 1;
-      visibility: visible;
-      height: 100%;
-      transition: width .15s, opacity .15s linear; }
+    opacity: 1;
+    visibility: visible;
+    height: 100%; }
+    .whats-showing-movie-media .media-container.images {
+      flex-wrap: wrap; }
     .whats-showing-movie-media .media-container .intrinsic {
       display: block;
       position: relative;
@@ -63,11 +41,17 @@
       border-radius: .5rem; }
       .whats-showing-movie-media .media-container .intrinsic.intrinsic--2x3 {
         padding-top: 56%; }
-    .whats-showing-movie-media .media-container .video-item, .whats-showing-movie-media .media-container .image-item {
+    .whats-showing-movie-media .media-container .video-item {
       display: block;
       position: relative;
       width: 80%;
       margin: .5rem; }
+    .whats-showing-movie-media .media-container .image-item {
+      display: block;
+      position: relative;
+      width: 25%;
+      margin: 0;
+      padding: .5rem .5rem 0 0; }
     .whats-showing-movie-media .media-container .video, .whats-showing-movie-media .media-container .poster {
       position: absolute;
       top: 0;

@@ -6,7 +6,6 @@ import PosterSideBar from './PosterSideBar';
 import OverviewContainer from './OverviewContainer';
 import CastContainer from './CastContainer';
 import MediaContainer from './MediaContainer';
-import DetailsContainer from './DetailsContainer';
 import ReccomendationContainer from './ReccomendationContainer';
 import './style.css';
 
@@ -45,7 +44,6 @@ class MoviePage extends Component {
                         <OverviewContainer className={baseClass} {...rest} {...cast} />
                         <CastContainer className={baseClass} {...cast} />
                         <MediaContainer className={baseClass} {...videos} {...images} />
-                        <DetailsContainer className={baseClass} {...rest} {...cast} />
                         <ReccomendationContainer className={baseClass} onClick={this.handleLinkClick} {...reccomendations} />
                     </div>
                     <div className="column-left">

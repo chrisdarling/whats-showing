@@ -5,7 +5,7 @@ import { ImageComponent } from 'shared';
 
 export default class CastItem extends Component {
     render() {
-        const { className, name, character, id, profile_path } = this.props;
+        const { className, name, character, loading, id, profile_path } = this.props;
 
         return (
             <Link to={`/profile/${id}`} className={`${className} menu-item-link`}>
@@ -13,19 +13,17 @@ export default class CastItem extends Component {
                     imagePath={profile_path}
                     placeholderURL="/assets/profile.png"
                     defaultURL={PROFILE_IMG_URL}
-                    imageClass="casting-person-image"
                 >
                     {
                         ({ onError, onLoad, source }) => (
-                            <picture>
+                            <picture className="intrinsic">
                                 <img src={source} className="casting-person-image" onError={onError} onLoad={onLoad} alt="profile" />
                             </picture>
                         )
                     }
                 </ImageComponent>
                 <div className="casting-info">
-                    <span className="casting-name">{name}</span>
-                    <span className="character">{character}</span>
+                    {!loading && <div className="casting-name">{name} <span className="character"> / {character}</span></div>}
                 </div>
             </Link>
         );
