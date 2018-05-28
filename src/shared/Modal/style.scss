@@ -1,0 +1,72 @@
+@import '../../config.scss';
+
+.whats-showing-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    .whats-showing-modal-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        //background: $color-theme-6;
+        width: 80%;
+        z-index: 10;
+        opacity: 1;
+
+        .image-item {
+            display: block;
+            position: relative;
+            width: 100%;
+        }
+
+        .intrinsic {
+
+            // Make sure <picture> wrapper is set to block
+            // Max-width is governed by parentNode
+            display: block;
+        
+            // Intrinsic Ratio Box
+            position: relative;
+            height: 0;
+            width: 100%;
+            padding-top: 100%; // Default to square
+        
+            // Custom Styling
+            border-radius: .5rem;
+            //border: 1px solid $color-theme-6;
+        
+            // Add as many ratios as you'd like...
+            &.intrinsic--2x3 {
+                padding-top: 56%;
+            }
+        }
+
+        .poster {
+            cursor: zoom-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .whats-showing-modal-background {
+        position: absolute;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: black;
+        opacity: 0.5;
+        z-index: 5;
+    }
+}

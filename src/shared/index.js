@@ -1,5 +1,5 @@
 import Toggle from './Toggle';
-import * as Arrows from './Arrows';
+import Arrows from './Arrows';
 import Spinner from './Spinner';
 import Push from './Push';
 import PosterCredit from './PosterCredit';
@@ -8,5 +8,9 @@ import Carousel from './Carousel';
 import AsyncComponent from './AsyncComponent';
 import Container from './Container';
 import Filter from './Filter';
+import Portal from './Portal';
+import Modal from './Modal';
 
-export { Toggle, Arrows, Spinner, Push, PosterCredit, ImageComponent, Carousel, AsyncComponent, Container, Filter };
+export * from './Arrows';
+
+export { Toggle, Portal, Modal, Arrows, Spinner, Push, PosterCredit, ImageComponent, Carousel, AsyncComponent, Container, Filter };

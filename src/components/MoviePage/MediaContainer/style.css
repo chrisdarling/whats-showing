@@ -78,7 +78,8 @@
       width: 100%;
       height: 100%; }
     .whats-showing-movie-media .media-container .poster {
-      width: 100%; }
+      width: 100%;
+      cursor: zoom-in; }
     .whats-showing-movie-media .media-container .video, .whats-showing-movie-media .media-container .poster {
       background: #293237; }
   .whats-showing-movie-media .ant-carousel .slick-initialized .slick-slide {

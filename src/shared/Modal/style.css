@@ -1,0 +1,49 @@
+.whats-showing-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  z-index: 100; }
+  .whats-showing-modal .whats-showing-modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    z-index: 10;
+    opacity: 1; }
+    .whats-showing-modal .whats-showing-modal-content .image-item {
+      display: block;
+      position: relative;
+      width: 100%; }
+    .whats-showing-modal .whats-showing-modal-content .intrinsic {
+      display: block;
+      position: relative;
+      height: 0;
+      width: 100%;
+      padding-top: 100%;
+      border-radius: .5rem; }
+      .whats-showing-modal .whats-showing-modal-content .intrinsic.intrinsic--2x3 {
+        padding-top: 56%; }
+    .whats-showing-modal .whats-showing-modal-content .poster {
+      cursor: zoom-out;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+  .whats-showing-modal .whats-showing-modal-background {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: 0.5;
+    z-index: 5; }

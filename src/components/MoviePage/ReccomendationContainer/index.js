@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import { Carousel } from 'antd';
-import { Arrows, Spinner, PosterCredit } from 'shared';
+import { NextNavButton, PrevNavButton, Spinner, PosterCredit } from 'shared';
 import './style.css';
 
 const POSTER_LIMIT = 10;
-const { NextNavButton, PrevNavButton } = Arrows;
 export default class ReccomendationContainer extends PureComponent {
     state = {
         settings: {

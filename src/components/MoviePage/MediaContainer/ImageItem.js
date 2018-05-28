@@ -4,7 +4,7 @@ import { ImageComponent } from 'shared';
 
 export default class ImageItem extends Component {
     render() {
-        const { file_path } = this.props;
+        const { file_path, onClick } = this.props;
         return(
             <div className="image-item">
                 <ImageComponent 
@@ -16,7 +16,7 @@ export default class ImageItem extends Component {
                     {
                         ({ onError, onLoad, source }) => (
                             <picture className="intrinsic intrinsic--2x3">
-                                <img src={source} className="poster" onError={onError} onLoad={onLoad} alt="poster" />
+                                <img onClick={onClick} src={source} className="poster" onError={onError} onLoad={onLoad} alt="poster" />
                             </picture>
                         )
                     }

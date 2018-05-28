@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
-import { PosterCredit, Arrows, Spinner } from 'shared';
+import { PosterCredit, NextNavButton, PrevNavButton, Spinner } from 'shared';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'antd';
 
 import './style.css';
 
 const baseClass = 'whats-showing-now-playing';
-const { NextNavButton, PrevNavButton } = Arrows;
 
 export default class NowPlaying extends PureComponent {
     state = {

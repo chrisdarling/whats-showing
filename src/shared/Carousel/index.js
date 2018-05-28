@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Carousel } from 'antd';
-import { NextNavButton, PrevNavButton } from '../Arrows';
+import { NextNavButton, PrevNavButton } from 'shared';
 
 export default class CarouselComponent extends Component {
     state = {
