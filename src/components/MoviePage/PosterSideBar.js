@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { PosterCredit } from 'shared';
+import { PosterCredit, ImageComponent } from 'shared';
+import { POSTER_IMG_URL, TINY_POSTER_URL } from '../../constants';
 import moment from 'moment';
 import Genre from './Genre';
 
@@ -12,12 +13,32 @@ export default class PosterSideBar extends Component {
     }
 
     render() {
-        const { className, title, status, release_date, id } = this.props;
+        const { className, title, status, loading, release_date, poster_path } = this.props;
         const releaseDate = release_date ? moment(release_date, 'YYYY MM DD').format('Do MMM YYYY') : null;
         return (
             <div className={className}>
-                {id && <PosterCredit {...this.props} />}
-                {!id && <PosterCredit />}
+                {loading && <PosterCredit />}
+                {!loading && (
+                        <div className="credit-poster">
+                            <ImageComponent
+                                imagePath={poster_path}
+                                placeholderURL="/assets/placeholder.jpg"
+                                loading={loading}
+                                defaultURL={POSTER_IMG_URL}
+                                mobileURL={TINY_POSTER_URL}
+                            >
+                                {
+                                    ({ onError, onLoad, source }) => (
+                                        <picture className="intrinsic intrinsic--2x3">
+                                            <img src={source} className="poster-image" onError={onError} onLoad={onLoad} alt="poster" />
+                                        </picture>
+                                    )
+                                }
+                            </ImageComponent>
+                            <div className="poster-title">{title}</div>
+                        </div>
+                    )
+                }
                 <div className="details">
                     <div className="title">{title}</div>
                     <div className="genres">
