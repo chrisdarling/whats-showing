@@ -16,6 +16,7 @@ export default class SectionContainer extends Component {
     renderPosterCards = () => {
         const posterProps = this.props[this.props.type];
         let { results } = posterProps;
+        if (!results) return null;
         results = results.slice(0, this.props.cardLimit);
         return results.map(movie => <PosterContainer key={movie.id} className={baseClass} {...movie} />);
     }

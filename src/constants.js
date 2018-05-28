@@ -1,5 +1,6 @@
 import axios from 'axios';
 import moment from 'moment';
+import jsonpAdapter from 'axios-jsonp';
 import { API_KEY } from './secret';
 
 const DATE_REQUEST_FORMAT = 'YYYY-MM-DD';
@@ -20,6 +21,7 @@ export const PROFILE_IMG_URL = 'https://image.tmdb.org/t/p/w92';
 
 export const fetch = axios.create({
     baseURL: 'https://api.themoviedb.org/3',
+    adapter: jsonpAdapter,
 });
 
 export const genres = [

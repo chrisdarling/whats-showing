@@ -5,15 +5,12 @@ import moment from 'moment';
 import Genre from './Genre';
 
 export default class PosterSideBar extends Component {
-    renderGenres = () => {
-        const { genres } = this.props;
-        if (!genres) return null;
-
-        return genres.slice(0, 3).map(g => <Genre className="genre-item" key={g.name} {...g} />);
+    static defaultProps = {
+        genres: [],
     }
 
     render() {
-        const { className, title, status, loading, release_date, poster_path } = this.props;
+        const { className, title, status, genres, loading, release_date, poster_path } = this.props;
         const releaseDate = release_date ? moment(release_date, 'YYYY MM DD').format('Do MMM YYYY') : null;
         return (
             <div className={className}>
@@ -42,7 +39,7 @@ export default class PosterSideBar extends Component {
                 <div className="details">
                     <div className="title">{title}</div>
                     <div className="genres">
-                        {this.renderGenres()}
+                        {genres.slice(0, 3).map(g => <Genre className="genre-item" key={g.name} {...g} />)}
                     </div>
                     <div className="status-info">
                         <span className="status">{status}</span> 

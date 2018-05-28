@@ -21,6 +21,10 @@ export default class NowPlaying extends PureComponent {
         }  
     }
 
+    static defaultProps = {
+        results: [],
+    }
+
     componentDidMount() {
         this.updateSlidesToShow();
         window.addEventListener("resize", this.updateSlidesToShow);
@@ -56,6 +60,8 @@ export default class NowPlaying extends PureComponent {
         const posterProps = this.props[this.props.type];
         let { results } = posterProps;
 
+        if (!results) return null;
+
         return results.slice(0, this.props.cardLimit).map((movie, i) => <PosterCredit key={`${movie.id}-${i}`} {...movie} />)   
     }
 
@@ -65,8 +71,7 @@ export default class NowPlaying extends PureComponent {
         let { results, loading } = posterProps;
 
         let content = <Spinner />;
-
-        if (!loading && results.length > 0) {
+        if (!loading && results && results.length > 0) {
             content = (
                 <Carousel autoplay className="posters-container" {...this.state.settings}>
                     {this.renderCarouselItems()}
