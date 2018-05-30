@@ -36,11 +36,14 @@ export default class CarouselComponent extends Component {
 
     componentDidMount() {
         this.updateSlidesToShow();
-        window.addEventListener("resize", this.updateSlidesToShow);
+        //this.nextSlide();
+        window.addEventListener('resize', this.updateSlidesToShow);
+        document.addEventListener('keydown', this.nextSlide);
     }
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.updateSlidesToShow);
+        document.removeEventListener('keypress', this.nextSlide);
     }
 
     componentDidUpdate(prevProps) {
@@ -48,8 +51,23 @@ export default class CarouselComponent extends Component {
         const { slideIndex, children, slideToIndex } = this.props;
         if (!slideToIndex) return;
         if (slideIndex !== prevIndex || children !== prevChildren) {
-            this.CarouselEl.goTo(slideIndex, true);
+            if (this.CarouselEl)
+                this.CarouselEl.goTo(slideIndex, true);
         }
+    }
+
+    render() {
+        const { children, className } = this.props;
+        return (
+            <Fragment>
+            {   children.length <= 1 ? 
+                <div className={className}>{children}</div> :
+                <Carousel ref={node => this.CarouselEl = node} className={className} {...this.state.settings}>
+                    {children}
+                </Carousel>
+            }
+            </Fragment>
+        )
     }
 
     updateSlidesToShow = () => {
@@ -74,18 +92,18 @@ export default class CarouselComponent extends Component {
         }
     }
 
-    render() {
-        const { children, className } = this.props;
-        return (
-            <Fragment>
-            {   children.length <= 1 ? 
-                <div className={className}>{children}</div> :
-                <Carousel ref={node => this.CarouselEl = node} className={className} {...this.state.settings}>
-                    {children}
-                </Carousel>
+    nextSlide = e => {
+        const { keyCode } = e;
+        if (keyCode === 37) {
+            if (this.CarouselEl) {
+                this.CarouselEl.prev();
             }
-            </Fragment>
-        )
-    }
+        } else if (keyCode === 39) {
+            if (this.CarouselEl) {
+                this.CarouselEl.next();
+            }
+        }
+
+    } 
 }
 
