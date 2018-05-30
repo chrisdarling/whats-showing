@@ -1,5 +1,6 @@
 .whats-showing-modal {
   display: flex;
+  visibility: hidden;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -9,34 +10,65 @@
   width: 100%;
   height: 100%;
   z-index: 100; }
+  .whats-showing-modal.open {
+    visibility: visible; }
   .whats-showing-modal .whats-showing-modal-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
     width: 80%;
-    z-index: 10;
-    opacity: 1; }
-    .whats-showing-modal .whats-showing-modal-content .image-item {
-      display: block;
-      position: relative;
-      width: 100%; }
-    .whats-showing-modal .whats-showing-modal-content .intrinsic {
-      display: block;
-      position: relative;
-      height: 0;
-      width: 100%;
-      padding-top: 100%;
-      border-radius: .5rem; }
-      .whats-showing-modal .whats-showing-modal-content .intrinsic.intrinsic--2x3 {
-        padding-top: 56%; }
-    .whats-showing-modal .whats-showing-modal-content .poster {
-      cursor: zoom-out;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+    z-index: 10; }
+    .whats-showing-modal .whats-showing-modal-content .media-container {
+      display: flex;
+      padding-bottom: 1rem;
+      opacity: 1;
       height: 100%; }
+      .whats-showing-modal .whats-showing-modal-content .media-container.images, .whats-showing-modal .whats-showing-modal-content .media-container.videos {
+        flex-wrap: wrap; }
+      .whats-showing-modal .whats-showing-modal-content .media-container .intrinsic {
+        display: block;
+        position: relative;
+        height: 0;
+        width: 100%;
+        padding-top: 100%;
+        background: #293237;
+        border-radius: .5rem; }
+        .whats-showing-modal .whats-showing-modal-content .media-container .intrinsic.intrinsic--2x3 {
+          padding-top: 56%; }
+      .whats-showing-modal .whats-showing-modal-content .media-container .image-item, .whats-showing-modal .whats-showing-modal-content .media-container .video-item {
+        display: block;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: .5rem .5rem 0 0; }
+      .whats-showing-modal .whats-showing-modal-content .media-container .poster, .whats-showing-modal .whats-showing-modal-content .media-container .video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #293237;
+        width: 100%;
+        cursor: zoom-out; }
+    .whats-showing-modal .whats-showing-modal-content .ant-carousel .slick-initialized .slick-slide {
+      display: flex; }
+    .whats-showing-modal .whats-showing-modal-content .ant-carousel .slick-dots {
+      bottom: -7px; }
+    .whats-showing-modal .whats-showing-modal-content .slick-track {
+      display: flex !important;
+      overflow: hidden; }
+    .whats-showing-modal .whats-showing-modal-content .ant-carousel .slick-prev {
+      left: -30x; }
+    .whats-showing-modal .whats-showing-modal-content .ant-carousel .slick-next {
+      right: -30px; }
+    .whats-showing-modal .whats-showing-modal-content i.anticon.anticon-right,
+    .whats-showing-modal .whats-showing-modal-content i.anticon.anticon-left {
+      color: #dadedf; }
+  .whats-showing-modal i.anticon.anticon-close.close-icon {
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 2rem;
+    padding: 1rem;
+    color: #fff;
+    cursor: pointer; }
   .whats-showing-modal .whats-showing-modal-background {
     position: absolute;
     cursor: pointer;

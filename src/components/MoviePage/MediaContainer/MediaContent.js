@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Spinner, Modal } from 'shared';
+import { Spinner, Modal, Carousel } from 'shared';
 import ImageItem from './ImageItem';
 import PropTypes from 'prop-types';
 
@@ -7,7 +7,7 @@ const IMAGES_LIMIT = 10;
 
 export default class MediaContent extends Component {
     state = {
-        modalData: {},
+        imageIndex: 1,
     }
 
     static propTypes = {
@@ -21,8 +21,8 @@ export default class MediaContent extends Component {
     }
 
     render() {
-        const { loading, open, onToggle } = this.props;
-
+        const { loading, open, onToggle, backdrops } = this.props;
+        const images = !!backdrops ? backdrops.slice(0, IMAGES_LIMIT) : [];
         return (
             <Fragment>
                 {loading 
@@ -35,8 +35,10 @@ export default class MediaContent extends Component {
                         </Fragment>
                     )
                 }
-                <Modal onToggle={onToggle} open={open}>
-                    <ImageItem {...this.state.modalData} onClick={this.handleClearToggle} />
+                <Modal onToggle={onToggle} totalChildren={images.length} open={open}>
+                    <Carousel className="media-container images" slideIndex={this.state.imageIndex}>
+                        {open && this.renderImageModalContent()}
+                    </Carousel>
                 </Modal>
             </Fragment>
         )
@@ -45,19 +47,29 @@ export default class MediaContent extends Component {
     renderImageContent = () => {
         const { backdrops } = this.props; 
         if (!!backdrops && backdrops.length > 0)
-            return backdrops.slice(0, IMAGES_LIMIT).map(i => <ImageItem onClick={() => this.handleToggle(i)} key={i.file_path} {...i} />);
+            return backdrops.slice(0, IMAGES_LIMIT).map((image,i) => <ImageItem onClick={() => this.handleToggle(i)} key={image.file_path} {...image} />);
 
         return null;
     }
 
-    handleToggle = modalData => {
+    renderImageModalContent = () => {
+        const { backdrops } = this.props; 
+        if (!!backdrops && backdrops.length > 0) {
+            const images = backdrops.slice(0, IMAGES_LIMIT);
+            return images.map((image,i) => <ImageItem onClick={() => this.handleClearToggle(i)} key={`${image.file_path}-${i}`} {...image} />);
+        }
+
+        return null;
+    }
+
+    handleToggle = imageIndex => {
         const { onToggle } = this.props;
-        this.setState({ modalData });
+        this.setState({ imageIndex });
         onToggle();
     }
 
     handleClearToggle = () => {
-        this.setState({ modalData: {} });
+        this.setState({ imageIndex: 1 });
         this.props.onToggle();
     }
 }

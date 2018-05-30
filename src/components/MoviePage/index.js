@@ -47,7 +47,7 @@ class MoviePage extends Component {
                         <ReccomendationContainer className={baseClass} onClick={this.handleLinkClick} {...reccomendations} />
                     </div>
                     <div className="column-left">
-                        <PosterSideBar className="movie-side-bar" onClick={this.handleLinkClick} {...rest} />
+                        <PosterSideBar className="movie-side-bar" onClick={this.handleLinkClick} videos={videos} {...rest} />
                     </div>
                 </div>
                 <Push />

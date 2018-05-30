@@ -2,6 +2,7 @@
 
 .whats-showing-modal {
     display: flex;
+    visibility: hidden;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -11,52 +12,88 @@
     width: 100%;
     height: 100%;
     z-index: 100;
+    &.open {
+        visibility: visible;
+    }
     .whats-showing-modal-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        //background: $color-theme-6;
         width: 80%;
         z-index: 10;
-        opacity: 1;
-
-        .image-item {
-            display: block;
-            position: relative;
-            width: 100%;
-        }
-
-        .intrinsic {
-
-            // Make sure <picture> wrapper is set to block
-            // Max-width is governed by parentNode
-            display: block;
-        
-            // Intrinsic Ratio Box
-            position: relative;
-            height: 0;
-            width: 100%;
-            padding-top: 100%; // Default to square
-        
-            // Custom Styling
-            border-radius: .5rem;
-            //border: 1px solid $color-theme-6;
-        
-            // Add as many ratios as you'd like...
-            &.intrinsic--2x3 {
-                padding-top: 56%;
+        .media-container {
+            display: flex;
+            padding-bottom: 1rem;
+            opacity: 1;
+            height: 100%;
+    
+            &.images, &.videos {
+                flex-wrap: wrap;
+            }
+              
+            .intrinsic {
+                display: block;
+                position: relative;
+                height: 0;
+                width: 100%;
+                padding-top: 100%;
+                background: $color-theme-6;
+                border-radius: .5rem;
+                &.intrinsic--2x3 {
+                    padding-top: 56%;
+                }
+            }
+    
+            .image-item, .video-item { 
+                display: block;
+                position: relative;
+                width: 100%;
+                margin: 0;
+                padding: .5rem .5rem 0 0;
+            }
+    
+            .poster, .video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: $color-theme-6;
+                width: 100%;
+                cursor: zoom-out;
             }
         }
-
-        .poster {
-            cursor: zoom-out;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .ant-carousel .slick-initialized .slick-slide {
+            display: flex;
         }
+    
+        .ant-carousel .slick-dots {
+            bottom: -7px;
+        }
+    
+        .slick-track {
+            display: flex !important;
+            overflow: hidden;
+        }
+    
+        .ant-carousel .slick-prev {
+            left: -30x;
+        }
+    
+        .ant-carousel .slick-next {
+            right: -30px;
+        }
+    
+        i.anticon.anticon-right,
+        i.anticon.anticon-left {
+            color: $color-gray-200;
+        }
+    }
+    i.anticon.anticon-close.close-icon {
+        position: fixed;
+        top: 0;
+        right: 0;
+        font-size: 2rem;
+        padding: 1rem;
+        color: #fff;
+        cursor: pointer;
     }
     .whats-showing-modal-background {
         position: absolute;

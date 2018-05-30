@@ -15,7 +15,7 @@ export default class NowPlaying extends PureComponent {
             speed: 500,
             slidesToShow: 6,
             slidesToScroll: 6,
-            graggable: true,
+            draggable: true,
             nextArrow: <NextNavButton />,
             prevArrow: <PrevNavButton />,
         }  

@@ -1,12 +1,22 @@
-import React, { Component } from 'react';
-import { PosterCredit, ImageComponent } from 'shared';
+import React, { Component, Fragment } from 'react';
+import { PosterCredit, ImageComponent, Toggle, Modal, Carousel } from 'shared';
 import { POSTER_IMG_URL, TINY_POSTER_URL } from '../../constants';
+import { Button } from 'antd';
 import moment from 'moment';
 import Genre from './Genre';
+import VideoItem from './VideoItem';
 
 export default class PosterSideBar extends Component {
     static defaultProps = {
         genres: [],
+        videos: {
+            results: [],
+        },
+    }
+
+    get HasVideos() {
+        const { videos: { results } } = this.props;
+        return results && results.length;
     }
 
     render() {
@@ -45,8 +55,26 @@ export default class PosterSideBar extends Component {
                         <span className="status">{status}</span> 
                         <span className="release-date">{releaseDate}</span>
                     </div>
+                    <Toggle>
+                        {({ on: open, toggle: onToggle }) => (
+                            <Fragment>
+                                {this.HasVideos && <Button onClick={onToggle} className="trailer" icon="play-circle-o">Play Trailer</Button>}
+                                <Modal open={open} onToggle={onToggle}>
+                                    <Carousel className="media-container videos" slideToIndex={false}>
+                                        {open && this.renderVideoItems()}
+                                    </Carousel>
+                                </Modal>
+                            </Fragment>
+                        )}
+                    
+                    </Toggle>
                 </div>
             </div>  
         );
+    }
+
+    renderVideoItems = () => {
+        const { videos: { results = [] } } = this.props;
+        return results.map(v => <VideoItem key={v.id} {...v} videoID={v.key} />)
     }
 }

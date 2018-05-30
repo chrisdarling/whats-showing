@@ -4,10 +4,16 @@ import { Carousel } from 'antd';
 import { NextNavButton, PrevNavButton } from 'shared';
 
 export default class CarouselComponent extends Component {
+    constructor() {
+        super();
+        this.CarouselEl = null;
+    }
+
     state = {
         settings: {
-            arrows: "true",
+            arrows: true,
             speed: 500,
+            draggable: true,
             slidesToShow: 1,
             slidesToScroll: 1,
             nextArrow: <NextNavButton />,
@@ -17,14 +23,15 @@ export default class CarouselComponent extends Component {
 
     static propTypes = {
         children: PropTypes.any,
-        totalChildren: PropTypes.number,
+        total: PropTypes.number,
         settings: PropTypes.object,
-        slidesToShow: PropTypes.number,
-        mobileSlidesToShow: PropTypes.number,
+        slideIndex: PropTypes.number,
+        slideToIndex: PropTypes.bool,
     }
 
     static defaultProps = {
-        slidesToShow: 1,
+        slideIndex: 1,
+        slideToIndex: true,
     }
 
     componentDidMount() {
@@ -34,6 +41,15 @@ export default class CarouselComponent extends Component {
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.updateSlidesToShow);
+    }
+
+    componentDidUpdate(prevProps) {
+        const { slideIndex: prevIndex, children: prevChildren } = prevProps;
+        const { slideIndex, children, slideToIndex } = this.props;
+        if (!slideToIndex) return;
+        if (slideIndex !== prevIndex || children !== prevChildren) {
+            this.CarouselEl.goTo(slideIndex, true);
+        }
     }
 
     updateSlidesToShow = () => {
@@ -59,23 +75,15 @@ export default class CarouselComponent extends Component {
     }
 
     render() {
-        const { settings: { slidesToShow } } = this.state;
-        const { totalChildren, children, className } = this.props;
+        const { children, className } = this.props;
         return (
             <Fragment>
-                {
-                    totalChildren > slidesToShow ?
-                        (
-                            <Carousel className={className} {...this.state.settings}>
-                                {children}
-                            </Carousel>
-                        ):
-                        (
-                            <div className={className}>
-                                {children}
-                            </div>
-                        )
-                }
+            {   children.length <= 1 ? 
+                <div className={className}>{children}</div> :
+                <Carousel ref={node => this.CarouselEl = node} className={className} {...this.state.settings}>
+                    {children}
+                </Carousel>
+            }
             </Fragment>
         )
     }

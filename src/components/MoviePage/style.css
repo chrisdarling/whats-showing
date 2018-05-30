@@ -45,6 +45,10 @@
             font-weight: 200; }
           .whats-showing-movie-details .column-left .movie-side-bar .details .status {
             margin-right: 1rem; }
+          .whats-showing-movie-details .column-left .movie-side-bar .details .ant-btn.trailer {
+            color: #dadedf;
+            background: #293237;
+            margin-top: 1rem; }
     .whats-showing-movie-details .column-right {
       display: flex;
       flex-direction: column;
@@ -92,10 +96,10 @@
       .whats-showing-movie-details .column-left .movie-side-bar {
         flex-direction: row;
         position: relative; }
-        .whats-showing-movie-details .column-left .movie-side-bar .details .genres {
-          margin-left: 1rem; }
-        .whats-showing-movie-details .column-left .movie-side-bar .details .title {
-          margin-left: 1rem; }
+        .whats-showing-movie-details .column-left .movie-side-bar .details {
+          margin: 0; }
+          .whats-showing-movie-details .column-left .movie-side-bar .details .title, .whats-showing-movie-details .column-left .movie-side-bar .details .ant-btn.trailer, .whats-showing-movie-details .column-left .movie-side-bar .details .genre {
+            margin-left: 1rem; }
     .whats-showing-movie-details .column-right {
       width: 100%;
       margin: 0;

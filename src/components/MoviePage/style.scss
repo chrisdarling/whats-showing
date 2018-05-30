@@ -55,8 +55,10 @@
                         margin-right: 1rem;
                     }
 
-                    .release-date {
-
+                    .ant-btn.trailer {
+                        color: $color-gray-200;
+                        background: $color-theme-6;
+                        margin-top: 1rem;
                     }
                 }
             }
@@ -129,12 +131,11 @@
 
                     }
                     .details {
-                        .genres {
+                        margin: 0;
+                        .title , .ant-btn.trailer, .genre {
                             margin-left: 1rem;
                         }
-                        .title {
-                            margin-left: 1rem;
-                        }
+
                     }
                 }
             }
