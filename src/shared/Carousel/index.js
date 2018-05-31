@@ -36,14 +36,13 @@ export default class CarouselComponent extends Component {
 
     componentDidMount() {
         this.updateSlidesToShow();
-        //this.nextSlide();
         window.addEventListener('resize', this.updateSlidesToShow);
         document.addEventListener('keydown', this.nextSlide);
     }
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.updateSlidesToShow);
-        document.removeEventListener('keypress', this.nextSlide);
+        document.removeEventListener('keydown', this.nextSlide);
     }
 
     componentDidUpdate(prevProps) {

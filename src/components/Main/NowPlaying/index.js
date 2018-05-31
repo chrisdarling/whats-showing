@@ -11,7 +11,7 @@ export default class NowPlaying extends PureComponent {
     state = {
         settings: {
             infinite: true,
-            arrows: "true",
+            arrows: true,
             speed: 500,
             slidesToShow: 6,
             slidesToScroll: 6,

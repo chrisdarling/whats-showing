@@ -58,7 +58,7 @@ export default class PosterSideBar extends Component {
                     <Toggle>
                         {({ on: open, toggle: onToggle }) => (
                             <Fragment>
-                                {this.HasVideos && <Button onClick={onToggle} className="trailer" icon="play-circle-o">Play Trailer</Button>}
+                                {this.HasVideos ? <Button onClick={onToggle} className="trailer" icon="play-circle-o">Play Trailer</Button> :  null}
                                 <Modal open={open} onToggle={onToggle}>
                                     <Carousel className="media-container videos" slideToIndex={false}>
                                         {open && this.renderVideoItems()}

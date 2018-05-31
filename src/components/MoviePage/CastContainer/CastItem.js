@@ -23,7 +23,7 @@ export default class CastItem extends Component {
                     }
                 </ImageComponent>
                 <div className="casting-info">
-                    {!loading && <div className="casting-name">{name} <span className="character"> / {character}</span></div>}
+                    {!loading && <div className="casting-name">{name} <span className="character">{character ? ` / ${character}` : null}</span></div>}
                 </div>
             </Link>
         );

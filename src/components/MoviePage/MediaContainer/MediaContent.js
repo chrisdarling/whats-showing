@@ -49,7 +49,7 @@ export default class MediaContent extends Component {
         if (!!backdrops && backdrops.length > 0)
             return backdrops.slice(0, IMAGES_LIMIT).map((image,i) => <ImageItem onClick={() => this.handleToggle(i)} key={image.file_path} {...image} />);
 
-        return null;
+        return <div className="">No Content Available</div>;
     }
 
     renderImageModalContent = () => {
