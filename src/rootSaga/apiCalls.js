@@ -1,4 +1,4 @@
-import { fetch, API_KEY_PARAMETER, currentDate, earliestDate, futureDate, genres, decades, decadeStart, decadeEnd } from './../constants';
+import { fetch, API_KEY_PARAMETER, currentDate, earliestDate, genres, decades, decadeStart, decadeEnd } from './../constants';
 
 export const getPopularData = () => {
     return fetch(`/discover/movie?sort_by=popularity.desc&${API_KEY_PARAMETER}`).then(res => res);
@@ -10,7 +10,7 @@ export const getShowingData = () => {
 }
 
 export const getUpcommingData = () => {
-    return fetch(`/discover/movie?sort_by=popularity.desc&primary_release_date.gte=${currentDate}&primary_release_date.lte=${futureDate}&${API_KEY_PARAMETER}`)
+    return fetch(`/discover/movie?sort_by=popularity.desc&primary_release_date.gte=${currentDate}&${API_KEY_PARAMETER}`)
                 .then(res => res);
 }
 

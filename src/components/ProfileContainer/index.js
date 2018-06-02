@@ -21,7 +21,7 @@ const displayBiography = (bio, seeMore) => {
 }
 class ProfileContainer extends Component {
     state = {
-        jobFilter: 'Actor',
+        jobFilter: null,
         sortFilter: 'Popularity',
         jobs: ['Actor'],
         decadeFilter: 'All',
@@ -29,29 +29,40 @@ class ProfileContainer extends Component {
         seeMore: false,
     }
 
+    static getDerivedStateFromProps(props, state) {
+        const { profile = {} } = props;
+        const { cast = [], crew = [] } = profile;
+        if (!!cast && !!crew) {
+            const jobCountDictionary = createJobCountDictionary(crew, cast);
+            const jobCountArray = createJobCountArray(jobCountDictionary);
+
+            if (!jobCountArray.length) {
+                return {
+                    ...state,
+                    jobFilter: null,
+                };
+            }
+
+            if (!state.jobFilter) {
+                return {
+                    ...state,
+                    jobs: Object.keys(jobCountDictionary) || ['Actor'],
+                    jobFilter: !!jobCountArray.length ? jobCountArray[0].job : null,
+                }; 
+            }
+ 
+            return {
+                ...state,
+                jobs: Object.keys(jobCountDictionary) || ['Actor'],
+            };
+        }
+        return null;
+    }
+
     componentDidMount() {
         window.scrollTo(0, 0);
         const { match, loadProfile } = this.props;
         loadProfile(match.params.id);
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const { profile: { cast, crew } } = nextProps;
-        if (!!cast && !!crew) {
-            const jobs = crew.reduce((prev, cur) => {
-                if (prev.some(p => !!cur && p === cur.job) || cur.media_type !== 'movie') {
-                    return prev;
-                }
-                prev.push(cur.job);
-                return prev;
-            }, []);
-            if (cast.length > 0) {
-                jobs.push('Actor');
-                this.setState({ jobs });
-            } else {
-                this.setState({ jobs, jobFilter: jobs[0] });
-            } 
-        }
     }
 
     get seeMore() {
@@ -112,12 +123,48 @@ class ProfileContainer extends Component {
     }
 
     handleShowBiography = () => {
-        this.setState({ seeMore: !this.state.seeMore });
+        this.setState(state => ({ seeMore: !state.seeMore }));
     }
 
     handleYearChange = (year) => {
         this.setState(() => ({ year }));
     }
+}
+
+function createJobCountDictionary(crew, cast) {
+    let jobCountDictionary = {};
+    crew.forEach(c => {
+        if (!!jobCountDictionary[c.job]) {
+            jobCountDictionary = {
+                ...jobCountDictionary,
+                [c.job]: jobCountDictionary[c.job] + 1,
+            };
+        } else {
+            jobCountDictionary = {
+                ...jobCountDictionary,
+                [c.job]: 1,
+            };
+        }
+    });
+    
+    if (!!cast.length) {
+        jobCountDictionary = {
+            ...jobCountDictionary,
+            Actor: cast.length,
+        };
+    }
+
+    return jobCountDictionary;
+}
+
+function createJobCountArray(jobCountDictionary) {
+    return Object.keys(jobCountDictionary)
+            .map(key => ({ job: key, count: jobCountDictionary[key] }))
+            .sort((a, b) => {
+                if (a.count > b.count) return -1;
+                if (a.count < b.count) return 1;
+                return 0;
+            });
 }
 
 export default connect(({ profile }) => ({
