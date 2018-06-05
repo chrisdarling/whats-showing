@@ -1,49 +1,17 @@
 @import '../../../config.scss';
 
 .whats-showing-profile-credits {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -.5rem;
-    .credit-poster {
-        display: block;
-        position: relative;
-        width: 25%;
-        padding: .5rem .5rem 0;
-        color: $color-gray-900;
-        border-radius: .5rem;
-        .credit-title {
-            position: absolute;
-            width: 100%;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-            padding: .5rem;
-        }
+    .poster-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        border: 1.5px solid $color-theme-6;
+        background: $color-theme-6
     }
-}
-
-@media only screen and (max-width : 992px) {
-    .whats-showing-profile-credits {
-        .credit-poster {
-            
-        }
+    .credit {
+        padding: .5rem .5rem;
     }
-}
-
-@media only screen and (max-width : 768px) {
-    .whats-showing-profile-credits {
-        .credit-poster {
-            
-        }
-    }
-}
-
-@media only screen and (max-width : 480px) {
-    .whats-showing-profile-credits {
-        padding: 0 -6px;
-        .credit-poster {
-            width: 33.33%;
-            padding: .5rem .5rem 0;
-        }
+    .credit-placeholder {
+        background: $color-theme-6;
     }
 }

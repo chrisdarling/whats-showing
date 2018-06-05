@@ -1,25 +1,12 @@
-.whats-showing-profile-credits {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -.5rem; }
-  .whats-showing-profile-credits .credit-poster {
-    display: block;
-    position: relative;
-    width: 25%;
-    padding: .5rem .5rem 0;
-    color: #131516;
-    border-radius: .5rem; }
-    .whats-showing-profile-credits .credit-poster .credit-title {
-      position: absolute;
-      width: 100%;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-      padding: .5rem; }
+.whats-showing-profile-credits .poster-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 1.5px solid #293237;
+  background: #293237; }
 
-@media only screen and (max-width: 480px) {
-  .whats-showing-profile-credits {
-    padding: 0 -6px; }
-    .whats-showing-profile-credits .credit-poster {
-      width: 33.33%;
-      padding: .5rem .5rem 0; } }
+.whats-showing-profile-credits .credit {
+  padding: .5rem .5rem; }
+
+.whats-showing-profile-credits .credit-placeholder {
+  background: #293237; }

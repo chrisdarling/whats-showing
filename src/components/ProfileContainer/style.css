@@ -9,8 +9,7 @@
   .whats-showing-profile .profile-container {
     display: flex;
     height: 100%;
-    width: 100%;
-    min-height: 100%; }
+    width: 100%; }
     .whats-showing-profile .profile-container .left-column {
       display: flex;
       flex-direction: column;
