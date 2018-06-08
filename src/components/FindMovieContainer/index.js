@@ -9,39 +9,45 @@ const baseClass = 'whats-showing-find-movies';
 class FindMovieContainer extends Component {
     componentDidMount() {
         window.scrollTo(0,0);
-        const { location: { search }, match } = this.props;
-        const items = {};
+        const { location: { search } } = this.props;
+        let items = {};
         const searchParams = new URLSearchParams(search);
         for (let p of searchParams.keys()) {
             items[p] = searchParams.get(p);
         }
-        items.page = match.params.page;
+        items = {
+            ...items,
+            page: 1,
+        };
         this.props.loadFindMovies(items);
+    }
+
+    componentWillUnmount() {
+        this.props.resetFilters();
     }
 
     handleSortChange = (sortby) => {
         const { find: { genre, decade } } = this.props;
-        this.props.history.push(`/movies/find/1?sortby=${sortby}&genre=${genre}&decade=${decade}`);
+        this.props.history.push(`/movies/find?sortby=${sortby}&genre=${genre}&decade=${decade}`);
         this.props.loadFindMovies({ sortby, genre, decade });
     }
 
     handleGenreChange = (genre) => {
-        window.scrollTo(0,0);
+        //window.scrollTo(0,0);
         const { find: { sortby, decade } } = this.props;
-        this.props.history.push(`/movies/find/1?sortby=${sortby}&genre=${genre}&decade=${decade}`);
+        this.props.history.push(`/movies/find?sortby=${sortby}&genre=${genre}&decade=${decade}`);
         this.props.loadFindMovies({ sortby, genre, decade });
     }
 
     handleDecadeChange = (decade) => {
         const { find: { sortby, genre } } = this.props;
-        this.props.history.push(`/movies/find/1?sortby=${sortby}&genre=${genre}&decade=${decade}`);
+        this.props.history.push(`/movies/find?sortby=${sortby}&genre=${genre}&decade=${decade}`);
         this.props.loadFindMovies({ sortby, genre, decade });
     }
 
     handleNextPage = (page) => {
-        window.scrollTo(0,0);
         const { find: { sortby, genre, decade } } = this.props;
-        this.props.history.push(`/movies/find/${page}?sortby=${sortby}&genre=${genre}&decade=${decade}`);
+        this.props.history.push(`/movies/find?sortby=${sortby}&genre=${genre}&decade=${decade}`);
         this.props.loadFindMovies({ sortby, genre, decade, page });
     }
 

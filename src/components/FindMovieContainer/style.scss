@@ -17,48 +17,31 @@
         flex-direction: column;
         width: 100%;
         padding: 0 .5rem;
-        .result-items {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -.5rem;
-        }
-        .credit-poster {
-            display: block;
-            width: 20%;
-            padding: .5rem .5rem 0;
-            color: $color-gray-900;
-            background: transparent;
+        .poster-image {
+            width: 100%;
+            height: 100%;
             border-radius: 10px;
+            border: 1.5px solid $color-theme-6;
+            background: $color-theme-6
+        }
+        .credit {
+            padding: .5rem .5rem;
+        }
+        .credit-placeholder {
+            background: $color-theme-6;
         }
         .result-filter {
             display: flex;
             margin-top: .5rem;
         }
-
-
     }
 }
 
-
-@media only screen and (max-width : 992px) {
-    .whats-showing-find-movies {
-        &-results {
-            .credit-poster {
-                width: 25%;
-            }
-        }
-    }
-}
 
 @media only screen and (max-width : 768px) {
     .whats-showing-find-movies {
         &-results {
-            .result-items {
-                margin: 0 -.25rem;
-            }
-            .credit-poster {
-                width: 25%;
-            }
+            
         }
     }
 }
@@ -71,8 +54,8 @@
                     margin-right: 0 !important;
                 }
             }
-            .credit-poster {
-                padding: .25rem .25rem 0;
+            .credit {
+                padding: .25rem .25rem;
             }
         }
     }

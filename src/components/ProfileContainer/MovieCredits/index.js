@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import classnames from 'classnames';
 import { Grid, AutoSizer, WindowScroller } from 'react-virtualized';
 import { Link } from 'react-router-dom';
 import { ImageComponent } from 'shared';
@@ -14,6 +15,7 @@ export default class MovieCredits extends Component {
     
     state = {
         results: [],
+        columnSize: 4,
     }
 
     static getDerivedStateFromProps(props, state) {
@@ -31,7 +33,7 @@ export default class MovieCredits extends Component {
 
         let results = [];
         while(list.length) {
-            results.push(list.splice(0, 4));
+            results.push(list.splice(0, state.columnSize));
         }
 
         return {
@@ -39,8 +41,33 @@ export default class MovieCredits extends Component {
         };
     }
 
+    componentDidMount() {
+        this.resizeGrid();
+        window.addEventListener("resize", this.resizeGrid);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.resizeGrid);
+    }
+
+    resizeGrid = () => {
+        if (window.innerWidth <= 480) {
+            this.setState(state => ({
+                ...state, 
+                columnSize: 3, 
+            }));
+        } else {
+            this.setState(state => ({
+                ...state, 
+                columnSize: 4, 
+            }));
+        }
+    }
+
     render() {
-        const { results } = this.state;
+        const { results, columnSize } = this.state;
+        const { sortFilter, filter, decadeFilter, year } = this.props;
+        const filterProps = { sortFilter, filter, decadeFilter, year };
         return (
             <WindowScroller>
                 {({ height, isScrolling, registerChild, onChildScroll, scrollTop }) => (
@@ -49,17 +76,17 @@ export default class MovieCredits extends Component {
                             <div ref={registerChild}>
                                 <Grid
                                     cellRenderer={this.cellRenderer}
-                                    columnCount={4}
-                                    columnWidth={(width/4) - 1}
+                                    columnCount={columnSize}
+                                    columnWidth={(width/columnSize) - 1}
                                     height={height}
                                     isScrolling={isScrolling}
                                     onScroll={onChildScroll}
                                     scrollTop={scrollTop}
                                     autoHeight
-                                    sortFilter={this.props.sortFilter}
                                     rowCount={results.length}
-                                    rowHeight={(width/4)*1.5}
+                                    rowHeight={(width/columnSize)*1.5}
                                     width={width}
+                                    filterProps={filterProps}
                                 />
                             </div>
                         )}
@@ -81,28 +108,39 @@ export default class MovieCredits extends Component {
       }) => {
         const { results } = this.state;
         const credit = results[rowIndex][columnIndex] || {};
-        const { poster_path, loading, id } = credit;
+        const { poster_path, loading, id, title } = credit;
+        const cn = placeholder =>  classnames('poster-image', { 'placeholder': placeholder });
+        let content = null;
+        if (id) {
+            content = (
+                <ImageComponent
+                    imagePath={poster_path}
+                    placeholderURL="/assets/placeholder.jpg"
+                    loading={loading}
+                    defaultURL={POSTER_IMG_URL}
+                    mobileURL={TINY_POSTER_URL}
+                >
+                    {
+                        ({ onError, onLoad, source, placeholder }) => (
+                            <Fragment>
+                                {isVisible ?
+                                <Fragment>
+                                    <img src={source} className={cn(placeholder)} onError={onError} onLoad={onLoad} alt="poster" />
+                                    { placeholder && <div className="title" style={{ height: style.height / 2, width: style.width - 25}}>{title}</div>}
+                                </Fragment>
+                                : <div className="credit-placeholder"></div>}
+                            </Fragment>
+                        )
+                    }
+                </ImageComponent>
+            );
+        }
+
 
         return (
             <Link key={key} to={`/movies/movie/${id}`}>
-                <picture style={style} className="credit">
-                    <ImageComponent
-                        imagePath={poster_path}
-                        placeholderURL="/assets/placeholder.jpg"
-                        loading={loading}
-                        defaultURL={POSTER_IMG_URL}
-                        mobileURL={TINY_POSTER_URL}
-                    >
-                        {
-                            ({ onError, onLoad, source }) => (
-                                <Fragment>
-                                    {isVisible ?
-                                    <img src={source} className="poster-image" onError={onError} onLoad={onLoad} alt="poster" />
-                                    : <div className="credit-placeholder"></div>}
-                                </Fragment>
-                            )
-                        }
-                    </ImageComponent>
+                <picture style={style} title={title} className="credit">
+                    {content}
                 </picture>
             </Link>
         )

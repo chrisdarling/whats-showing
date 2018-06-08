@@ -6,12 +6,35 @@
         height: 100%;
         border-radius: 10px;
         border: 1.5px solid $color-theme-6;
-        background: $color-theme-6
+        background: $color-theme-6;
+        &.placeholder {
+            opacity: .3;
+        }
     }
+    .title {
+        position: absolute;
+        top: 0;
+        margin: 50% 0 1rem 1rem;
+        left: 0;
+        font-size: 1.2rem;
+        color: $color-gray-200;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }   
     .credit {
-        padding: .5rem .5rem;
+        padding: .5rem;
     }
     .credit-placeholder {
         background: $color-theme-6;
+    }
+}
+
+
+@media only screen and (max-width : 480px) {
+    .whats-showing-profile-credits {
+        .credit {
+            padding: .25rem;
+        }
     }
 }

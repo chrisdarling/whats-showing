@@ -6,10 +6,12 @@ const initialState = {
     genre: 'All',
     decade: 'All',
     page: 1,
+    results: [],
 };
 
 export const loadFindMovies = createAction('LOAD_FIND_MOVIES');
 export const fetchedFindMovies = createAction('FETCHED_FIND_MOVIES');
+export const resetFilters = createAction('RESET_FIND_FILTERS');
 
 export default handleActions({
     [loadFindMovies]: (state, { payload }) => ({
@@ -24,5 +26,15 @@ export default handleActions({
         ...state,
         loading: false,
         ...payload,
+        results: state.page === 1 ? [...payload.results] : [...state.results, ...payload.results],
+    }),
+    [resetFilters]: state => ({
+        ...state,
+        loading: false,
+        sortby: 'popularity.desc',
+        genre: 'All',
+        decade: 'All',
+        page: 1,
+        results: [],
     }),
 }, initialState);

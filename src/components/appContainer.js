@@ -17,7 +17,7 @@ export default class AppContainer extends Component {
                 <div className="wrapper">
                     <Switch>
                         <Route path="/movies/movie/:id" component={MoviePage} /> 
-                        <Route path="/movies/find/:page" component={FindMovieContainer}/>
+                        <Route path="/movies/find/" component={FindMovieContainer}/>
                         <Route path="/profile/:id" component={ProfileContainer} />
                         <Route path="/movies" component={MovieContainer} />
                         <Route path="/search/:type/:searchString/:page" component={SearchContainer} />

@@ -4,9 +4,26 @@
   border-radius: 10px;
   border: 1.5px solid #293237;
   background: #293237; }
+  .whats-showing-profile-credits .poster-image.placeholder {
+    opacity: .3; }
+
+.whats-showing-profile-credits .title {
+  position: absolute;
+  top: 0;
+  margin: 50% 0 1rem 1rem;
+  left: 0;
+  font-size: 1.2rem;
+  color: #dadedf;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
 
 .whats-showing-profile-credits .credit {
-  padding: .5rem .5rem; }
+  padding: .5rem; }
 
 .whats-showing-profile-credits .credit-placeholder {
   background: #293237; }
+
+@media only screen and (max-width: 480px) {
+  .whats-showing-profile-credits .credit {
+    padding: .25rem; } }

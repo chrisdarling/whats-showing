@@ -9,6 +9,7 @@ export default class ImageComponent extends Component {
         imageError: false,
         isMobile: false,
         source: '',
+        placeholder: false,
     }
 
     static propTypes = {
@@ -33,6 +34,7 @@ export default class ImageComponent extends Component {
         return {
             ...state,
             source: showPlaceholder ? placeholderURL : sourceURL,
+            placeholder: showPlaceholder,
         };
     }
 

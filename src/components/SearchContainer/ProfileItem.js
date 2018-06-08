@@ -4,7 +4,7 @@ import { POSTER_IMG_URL } from '../../constants';
 import { ImageComponent } from 'shared';
 import './style.css';
 
-export default class PosterCredit extends Component {
+export default class ProfileItem extends Component {
     render() {
         const { id, name, profile_path } = this.props;
         return (
