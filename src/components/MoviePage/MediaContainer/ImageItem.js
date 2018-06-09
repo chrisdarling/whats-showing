@@ -14,9 +14,11 @@ export default class ImageItem extends Component {
                     imageClass="poster"
                 >
                     {
-                        ({ onError, onLoad, source }) => (
-                            <picture className="intrinsic intrinsic--2x3">
-                                <img onClick={onClick} src={source} className="poster" onError={onError} onLoad={onLoad} alt="poster" />
+                        ({ onError, onLoad, source, registerRef, isVisible }) => (
+                            <picture ref={registerRef} className="intrinsic intrinsic--2x3">
+                                {isVisible ? 
+                                    <img onClick={onClick} src={source} className="poster" onError={onError} onLoad={onLoad} alt="poster" />
+                                    : <div className="poster"></div>}
                             </picture>
                         )
                     }

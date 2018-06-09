@@ -19,9 +19,11 @@ export default class PosterCredit extends Component {
                         mobileURL={TINY_POSTER_URL}
                     >
                         {
-                            ({ onError, onLoad, source }) => (
-                                <picture className="intrinsic intrinsic--2x3" onClick={onClick}>
-                                    <img src={source} className="poster-image" onError={onError} onLoad={onLoad} alt="poster" />
+                            ({ onError, onLoad, source, registerRef, isVisible }) => (
+                                <picture ref={registerRef} className="intrinsic intrinsic--2x3" onClick={onClick}>
+                                    {isVisible ?
+                                        <img src={source} className="poster-image" onError={onError} onLoad={onLoad} alt="poster" />
+                                        : <div className="poster-image"></div>}
                                 </picture>
                             )
                         }

@@ -23,10 +23,12 @@ export default class PosterCard extends Component {
                 imageClass="backdrop-image"
             >
                 {
-                    ({ onError, onLoad, source }) => (
-                        <Link to={`/movies/movie/${id}`} className="menu-item-link">
-                            <picture key="placeholder-backdrop" className="intrinsic intrinsic--2x3">
-                                <img src={source} className="backdrop-image" onError={onError} onLoad={onLoad} alt="backdrop" />
+                    ({ onError, onLoad, source, isVisible, registerRef }) => (
+                        <Link to={`/movies/movie/${id}`} className="menu-item-link" >
+                            <picture ref={registerRef} key="placeholder-backdrop" className="intrinsic intrinsic--2x3">
+                                {isVisible ? 
+                                    <img src={source} className="backdrop-image" onError={onError} onLoad={onLoad} alt="backdrop" /> 
+                                    : <div className="backdrop-image"></div>}
                             </picture>
                         </Link>
                     )

@@ -1,16 +1,23 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import 'intersection-observer';
 
 import './style.css';
 
 export default class ImageComponent extends Component {
-    state = {
-        imageStatus: 'loading',
-        imageError: false,
-        isMobile: false,
-        source: '',
-        placeholder: false,
-    }
+    constructor() {
+        super();
+        this.imageEl = null;
+        this.io = new IntersectionObserver(this.checkIfVisible, {});
+        this.state = {
+            imageStatus: 'loading',
+            imageError: false,
+            isMobile: false,
+            source: '',
+            placeholder: false,
+            isVisible: false,
+        };
+    } 
 
     static propTypes = {
         defaultURL: PropTypes.string.isRequired,
@@ -40,10 +47,14 @@ export default class ImageComponent extends Component {
 
     componentDidMount() {
         this.checkMobile();
+        if (this.imageEl) {
+            this.io.observe(this.imageEl);
+        }
         window.addEventListener("resize", this.checkMobile);
     }
 
     componentWillUnmount() {
+        this.io.disconnect();
         window.removeEventListener('resize', this.checkMobile);
     }
 
@@ -60,6 +71,7 @@ export default class ImageComponent extends Component {
             ...this.state,
             onError: this.handleError,
             onLoad: this.handleLoad,
+            registerRef: this.registerRef,
          })
     }
 
@@ -69,5 +81,16 @@ export default class ImageComponent extends Component {
 
     handleError = () => {
         this.setState({ imageError: true });
+    }
+
+    registerRef = node => {
+       return this.imageEl = node;
+    };
+
+    checkIfVisible = entries => {
+        const { isVisible: alreadyLoaded } = this.state;
+        if (alreadyLoaded) return;
+        const isVisible = entries.some(e => e.isIntersecting);
+        this.setState({ isVisible });
     }
 }
