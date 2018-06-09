@@ -8,8 +8,6 @@ import ResultFilter from './ResultFilter';
 const STATUS_LOADING = 1;
 export default class MovieResults extends Component {
     state = {
-        results: [],
-        list: [],
         loadedRowsMap: [],
         columnSize:5,
         sortBy: 'popularity.desc',
@@ -18,29 +16,17 @@ export default class MovieResults extends Component {
     };
 
     static getDerivedStateFromProps(props, state) {
-        const { results: list = [], sortBy, genre, decade } = props;
-        let results = [];
-        let newList = Array.from(list);
-        while(newList.length) {
-            results.push(newList.splice(0, state.columnSize));
-        }
-        if (sortBy !== state.sortBy || genre !== state.genre || decade !== state.decade) {
+        const { sortby, genre, decade } = props;
+        if (sortby !== state.sortby || genre !== state.genre || decade !== state.decade) {
             return {
                 ...state,
                 loadedRowsMap: [],
-                results,
-                list,
-                sortBy,
+                sortby,
                 genre,
+                decade,
             };
         }
-        return {
-            ...state,
-            results,
-            list,
-            sortBy,
-            genre,
-        };
+        return null;
     }
 
     componentDidMount() {
@@ -50,6 +36,18 @@ export default class MovieResults extends Component {
 
     componentWillUnmount() {
         window.removeEventListener("resize", this.resizeGrid);
+    }
+
+    get Results() {
+        const { results: list = [] } = this.props;
+        const { columnSize } = this.state;
+        let results = [];
+        let newList = Array.from(list);
+        while(newList.length) {
+            results.push(newList.splice(0, columnSize));
+        }
+
+        return results;
     }
 
     resizeGrid = () => {
@@ -75,9 +73,8 @@ export default class MovieResults extends Component {
     }
 
     render() {
-        const { className, sortBy, genre, decade } = this.props;
-        const { list } = this.state;
-        const filterProps = { sortBy, genre, decade };
+        const { className, sortby, genre, decade, results: list = [] } = this.props;
+        const filterProps = { sortby, genre, decade };
 
         return (
             <div className={`${className}-results`}>
@@ -98,9 +95,10 @@ export default class MovieResults extends Component {
 
     _infiniteLoaderChildFunction = ({ onRowsRendered, registerChild }) => {
         this._onRowsRendered = onRowsRendered;
-        const { results = [], columnSize } = this.state;
-        const { sortBy, genre, decade } = this.props;
-        const filterProps = { sortBy, genre, decade };
+        const { columnSize } = this.state;
+        const results = this.Results;
+        const { sortby, genre, decade } = this.props;
+        const filterProps = { sortby, genre, decade };
     
         return (
             <WindowScroller>
@@ -142,7 +140,7 @@ export default class MovieResults extends Component {
         style,      // Style object to be applied to cell (to position it);
                      // This must be passed through to the rendered cell element.
       }) => {
-        const { results } = this.state;
+        const results = this.Results;
         const credit = results[rowIndex][columnIndex] || {};
         const { poster_path, loading, id } = credit;
 

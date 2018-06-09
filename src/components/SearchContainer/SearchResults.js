@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Spinner from '../../shared/Spinner';
-import { InfiniteLoader, AutoSizer, WindowScroller, Grid } from 'react-virtualized';
+// import { InfiniteLoader, AutoSizer, WindowScroller, Grid } from 'react-virtualized';
 import PosterCredit from '../../shared/PosterCredit';
 import ProfileItem from './ProfileItem';
 import { Pagination } from 'antd';
