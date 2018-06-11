@@ -6,7 +6,7 @@
     padding: 0;
     color: $color-gray-200;
     background: $color-theme-6;
-    box-shadow: 0 2px 8px $color-gray-700;
+    //box-shadow: 0 2px 8px $color-gray-700;
     top: 0;
     left: 0;
     right: 0;
@@ -114,8 +114,7 @@
                     &:after, 
                     &:before {
                         text-decoration: none;
-                        color: $color-gray-200;
-                        fill: $color-gray-200;
+                        color: $color-theme-5;
                     }
                 }
             }

@@ -30,7 +30,7 @@
       cursor: pointer;
       padding: .5rem; }
     .whats-showing-search-sidebar .active {
-      background: #293237;
+      background: black;
       font-weight: 600; }
   .whats-showing-search-results {
     display: flex;
@@ -58,7 +58,7 @@
         align-items: center;
         width: 100%;
         height: 200px;
-        background: #293237; }
+        background: black; }
         .whats-showing-search-results .result-container .no-content p {
           text-align: center;
           width: 100%; }
@@ -95,15 +95,15 @@
       width: 100%;
       height: 100%;
       border-radius: 5px;
-      border: 1px solid #293237;
-      background: #293237; }
+      border: 1px solid black;
+      background: black; }
     .whats-showing-search-results .intrinsic {
       display: block;
       position: relative;
       height: 0;
       width: 100%;
       padding-top: 100%;
-      background: #293237;
+      background: black;
       border-radius: .5rem; }
       .whats-showing-search-results .intrinsic.intrinsic--2x3 {
         padding-top: 150%; }

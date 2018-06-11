@@ -14,19 +14,19 @@
 
 .credit-filter .year-selector .ant-radio-button-wrapper {
   width: 10%;
-  background: #293237;
+  background: black;
   color: #dadedf; }
 
 .credit-filter .year-selector .ant-radio-button-wrapper-checked {
   background: #a7b0b2;
-  color: #62b0a2;
-  border: 1px solid #62b0a2; }
+  color: #DD523C;
+  border: 1px solid #DD523C; }
 
 .ant-select-dropdown-menu-item {
-  background: #293237;
+  background: black;
   color: #dadedf; }
   .ant-select-dropdown-menu-item:hover {
-    color: #62b0a2; }
+    color: #DD523C; }
 
 @media only screen and (max-width: 768px) {
   .credit-filter .year-selector .ant-radio-button-wrapper {

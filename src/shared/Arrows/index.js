@@ -8,7 +8,7 @@ export function NextNavButton(props) {
             style={{...style, display: 'block'}}
             onClick={onClick}
         >
-            <Icon type="right" />
+            <Icon type="right-circle" />
         </div>
     );
 }
@@ -21,7 +21,7 @@ export function PrevNavButton(props) {
             style={{...style, display: 'block'}}
             onClick={onClick}
         >
-            <Icon type="left" />
+            <Icon type="left-circle" />
         </div>
     );
 }

@@ -22,13 +22,13 @@
       padding: .5rem .5rem 1rem 0;
       width: 50%; }
       .whats-showing-movie-casting .casting-items .casting-item:hover {
-        background: #293237; }
+        background: black; }
     .whats-showing-movie-casting .casting-items .casting-person-image {
       width: 92px;
       height: 92px;
       color: #dadedf;
-      background: #293237;
-      border: 2px solid #293237;
+      background: black;
+      border: 2px solid black;
       border-radius: 50%; }
     .whats-showing-movie-casting .casting-items .casting-info {
       display: flex;

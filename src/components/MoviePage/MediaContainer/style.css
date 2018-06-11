@@ -18,7 +18,7 @@
       display: flex;
       align-items: center;
       width: 100%;
-      background: #293237; }
+      background: black; }
       .whats-showing-movie-media .no-media .media-default p {
         text-align: center;
         width: 100%; }
@@ -35,7 +35,7 @@
       height: 0;
       width: 100%;
       padding-top: 100%;
-      background: #293237;
+      background: black;
       border-radius: .5rem; }
       .whats-showing-movie-media .media-container .intrinsic.intrinsic--2x3 {
         padding-top: 56%; }
@@ -63,7 +63,7 @@
       width: 100%;
       cursor: zoom-in; }
     .whats-showing-movie-media .media-container .video, .whats-showing-movie-media .media-container .poster {
-      background: #293237; }
+      background: black; }
   .whats-showing-movie-media .ant-carousel .slick-initialized .slick-slide {
     display: flex; }
   .whats-showing-movie-media .ant-carousel .slick-dots {
@@ -76,6 +76,6 @@
     left: -15px; }
   .whats-showing-movie-media .ant-carousel .slick-next {
     right: -18px; }
-  .whats-showing-movie-media i.anticon.anticon-right,
-  .whats-showing-movie-media i.anticon.anticon-left {
+  .whats-showing-movie-media i.anticon.anticon-right-circle,
+  .whats-showing-movie-media i.anticon.anticon-left-circle {
     color: #dadedf; }

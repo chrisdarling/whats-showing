@@ -17,7 +17,7 @@
       .whats-showing-profile .profile-container .left-column .actor-info {
         width: 80%; }
       .whats-showing-profile .profile-container .left-column .see-more {
-        color: #62b0a2; }
+        color: #DD523C; }
       .whats-showing-profile .profile-container .left-column .profile-name {
         width: 80%;
         font-size: 1.5rem;
@@ -35,7 +35,7 @@
           height: 0;
           width: 100%;
           padding-top: 100%;
-          background: #293237;
+          background: black;
           border-radius: .5rem; }
           .whats-showing-profile .profile-container .left-column .profile-image-container .intrinsic.intrinsic--2x3 {
             padding-top: 150%; }
@@ -46,7 +46,7 @@
           width: 100%;
           height: 100%;
           border-radius: .5rem;
-          border: 1px solid #3a474e; }
+          border: 1px solid #202020; }
     .whats-showing-profile .profile-container .right-column {
       display: flex;
       flex-direction: column;

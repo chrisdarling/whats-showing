@@ -64,6 +64,11 @@ body {
     }
 }
 
+a:hover, a:focus, a:active, a:visited {
+    color: unset;
+    text-decoration: none;
+}
+
 .ant-select-dropdown-menu-item {
     background: $color-theme-6;
     color: $color-gray-200;

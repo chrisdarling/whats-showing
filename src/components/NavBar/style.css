@@ -3,8 +3,7 @@
   display: flex;
   padding: 0;
   color: #dadedf;
-  background: #293237;
-  box-shadow: 0 2px 8px #555f61;
+  background: black;
   top: 0;
   left: 0;
   right: 0;
@@ -44,7 +43,7 @@
           display: flex;
           align-items: center; }
         .whats-showing-navbar-container .menu-items .menu-item:hover {
-          color: #62b0a2; }
+          color: #DD523C; }
           .whats-showing-navbar-container .menu-items .menu-item:hover .sub-menu-container {
             display: block; }
         .whats-showing-navbar-container .menu-items .menu-item .search-icon {
@@ -62,7 +61,7 @@
             position: absolute;
             list-style: none;
             color: #dadedf;
-            background: #293237;
+            background: black;
             padding: 0; }
             .whats-showing-navbar-container .menu-items .menu-item .sub-menu-container .menu-sub-items:hover {
               display: flex;
@@ -71,7 +70,7 @@
               padding: .5rem; }
               .whats-showing-navbar-container .menu-items .menu-item .sub-menu-container .menu-sub-items .menu-sub-item:hover {
                 background: #dadedf;
-                color: #62b0a2; }
+                color: #DD523C; }
     .whats-showing-navbar-container .nav-bar-left.hide-lg {
       display: none; }
     .whats-showing-navbar-container .title-container .menu-item-link {
@@ -82,8 +81,7 @@
         font-size: 1.1rem; }
         .whats-showing-navbar-container .title-container .menu-item-link .anticon.anticon-play-circle-o:hover, .whats-showing-navbar-container .title-container .menu-item-link .anticon.anticon-play-circle-o:focus, .whats-showing-navbar-container .title-container .menu-item-link .anticon.anticon-play-circle-o:after, .whats-showing-navbar-container .title-container .menu-item-link .anticon.anticon-play-circle-o:before {
           text-decoration: none;
-          color: #dadedf;
-          fill: #dadedf; }
+          color: #DD523C; }
     .whats-showing-navbar-container .title {
       text-align: center;
       vertical-align: center;

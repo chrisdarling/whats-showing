@@ -32,7 +32,7 @@
     &-card {
         display: flex;
         flex-direction: column;
-        background: $color-theme-6;
+        background: $color-theme-7;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         width: 100%;
         height: 100%;
@@ -72,6 +72,7 @@
         .card-content {
             padding: .5rem;
             color: $color-gray-200;
+            background: $color-theme-7;
             &:hover {
                 color: $color-theme-5;
             }

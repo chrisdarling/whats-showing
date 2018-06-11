@@ -5,13 +5,14 @@
   margin-right: .75rem; }
   .whats-showing-filter .filter-label {
     font-size: .8rem;
-    margin-right: .5rem; }
+    margin-right: .5rem;
+    color: #DD523C; }
   .whats-showing-filter .sort-filter {
-    background: #293237;
+    background: black;
     color: #dadedf;
     width: 12rem; }
     .whats-showing-filter .sort-filter .ant-select-selection--single {
-      background: #293237; }
+      background: black; }
       .whats-showing-filter .sort-filter .ant-select-selection--single .ant-select-arrow {
         color: #dadedf; }
   .whats-showing-filter .selector-wrapper {
