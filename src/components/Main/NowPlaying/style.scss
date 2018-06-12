@@ -5,6 +5,7 @@
     padding: 1.5rem .5rem;
     .section-title {
         text-transform: uppercase;
+        font-size: 1.2rem;
     }
 
     .posters-container {
@@ -44,34 +45,4 @@
         color: $color-gray-200;
     }
 
-}
-
-@media only screen and (max-width : 992px) {
-    .whats-showing-now-playing {
-        .posters-container {
-            .credit-poster {
-                
-            }
-        }
-    }
-}
-
-@media only screen and (max-width : 768px) {
-    .whats-showing-now-playing {
-        .posters-container {
-            .credit-poster {
-                //width: 33.33%;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width : 480px) {
-    .whats-showing-now-playing {
-        .posters-container {
-            .credit-poster {
-
-            }
-        }
-    }
 }

@@ -138,11 +138,15 @@ export default class MovieCredits extends Component {
 
 
         return (
-            <Link key={key} to={`/movies/movie/${id}`}>
-                <picture style={style} title={title} className="credit">
-                    {content}
-                </picture>
-            </Link>
+            <Fragment key={key} >
+                { id ?
+                <Link to={`/movies/movie/${id}`}>
+                    <picture style={style} title={title} className="credit">
+                        {content}
+                    </picture>
+                </Link> :
+                <div style={style}></div>}
+            </Fragment>
         )
     }
 }

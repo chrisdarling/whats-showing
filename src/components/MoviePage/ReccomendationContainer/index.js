@@ -10,7 +10,7 @@ export default class ReccomendationContainer extends PureComponent {
             arrows: true,
             speed: 500,
             slidesToShow: 6,
-            slidesToScroll: 1,
+            slidesToScroll: 6,
             nextArrow: <NextNavButton />,
             prevArrow: <PrevNavButton />,
         },
@@ -31,6 +31,8 @@ export default class ReccomendationContainer extends PureComponent {
                 settings: {
                     ...state.settings,
                     slidesToShow: 4,
+                    slidesToScroll: 4,
+                    arrows: false,
                 },
             }));
         } else {
@@ -38,6 +40,7 @@ export default class ReccomendationContainer extends PureComponent {
                 settings: {
                     ...state.settings,
                     slidesToShow: 6,
+                    slidesToScroll: 6,
                 },
             }));
         }

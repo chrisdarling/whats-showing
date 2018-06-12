@@ -55,7 +55,7 @@ export default class Modal extends Component {
                                 {children}
                                 <Icon type="close" className="close-icon" onClick={onToggle}/>
                             </div> 
-                            <div className="whats-showing-modal-background"></div>
+                            <div className="whats-showing-modal-background" ></div>
                         </div>
                     </Portal>
             </Fragment>
