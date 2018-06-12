@@ -17,12 +17,12 @@
       width: 100%;
       height: 100%;
       border-radius: 10px;
-      border: 1.5px solid black;
-      background: black; }
+      border: 1.5px solid #181818;
+      background: #181818; }
     .whats-showing-find-movies-results .credit {
       padding: .5rem .5rem; }
     .whats-showing-find-movies-results .credit-placeholder {
-      background: black; }
+      background: #181818; }
     .whats-showing-find-movies-results .result-filter {
       display: flex;
       margin-top: .5rem; }

@@ -69,6 +69,12 @@
             opacity: 0.6;
         }
 
+        &:hover {
+            .card-content {
+                color: $color-theme-5;
+            }
+        }
+
         .card-content {
             padding: .5rem;
             color: $color-gray-200;
@@ -78,9 +84,14 @@
             }
             cursor: pointer;
             .small-title, .small-date {
-                font-size: .8rem;
+                font-size: 1rem;
                 padding-bottom: .5rem;
+                font-weight: 400;
                 margin-right: .5rem;
+            }
+
+            .small-date {
+                color: $color-gray-500;
             }
         }
     }

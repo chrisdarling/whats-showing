@@ -7,7 +7,7 @@
     height: 0;
     width: 100%;
     padding-top: 100%;
-    background: black;
+    background: #181818;
     border-radius: .5rem; }
     .credit-poster .intrinsic.intrinsic--2x3 {
       padding-top: 150%; }
@@ -18,7 +18,7 @@
     width: 100%;
     height: 100%;
     border-radius: .5rem;
-    border: 1px solid black; }
+    border: 1px solid #181818; }
   .credit-poster .placeholder {
     opacity: 0.4; }
   .credit-poster .poster-title {

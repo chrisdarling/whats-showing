@@ -3,7 +3,7 @@
   display: flex;
   padding: 0;
   color: #dadedf;
-  background: black;
+  background: #181818;
   top: 0;
   left: 0;
   right: 0;
@@ -36,7 +36,7 @@
       .whats-showing-navbar-container .menu-items .menu-item {
         margin-right: 1.5rem;
         height: 100%;
-        font-weight: 300;
+        font-weight: 400;
         padding: 1rem 0;
         cursor: pointer; }
         .whats-showing-navbar-container .menu-items .menu-item.search {
@@ -61,7 +61,7 @@
             position: absolute;
             list-style: none;
             color: #dadedf;
-            background: black;
+            background: #181818;
             padding: 0; }
             .whats-showing-navbar-container .menu-items .menu-item .sub-menu-container .menu-sub-items:hover {
               display: flex;
@@ -87,7 +87,7 @@
       vertical-align: center;
       font-size: 1.2rem;
       color: #dadedf;
-      font-weight: 300;
+      font-weight: 600;
       margin: 0; }
       .whats-showing-navbar-container .title b {
         font-size: 1.2rem;

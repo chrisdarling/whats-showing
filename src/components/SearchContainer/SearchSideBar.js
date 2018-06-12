@@ -10,12 +10,12 @@ export default class SearchSideBar extends Component {
             <div className={`${className}-sidebar`}>
                 <div className="sidebar-title">SHOW RESULTS FOR</div>
                 <div className={movieClass} onClick={() => onClick('movies')}>
-                    <span>Movies</span>
-                    <span>{movieResults}</span>
+                    <span className="result-title">Movies</span>
+                    <span className="result-count">{movieResults}</span>
                 </div>
                 <div className={peopleClass} onClick={() => onClick('people')}>
-                    <span>People</span>
-                    <span>{peopleResults}</span>
+                    <span className="result-title">People</span>
+                    <span className="result-count">{peopleResults}</span>
                 </div>
             </div>
         );

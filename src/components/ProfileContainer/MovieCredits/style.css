@@ -2,8 +2,8 @@
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  border: 1.5px solid black;
-  background: black; }
+  border: 1.5px solid #181818;
+  background: #181818; }
   .whats-showing-profile-credits .poster-image.placeholder {
     opacity: .3; }
 
@@ -22,7 +22,7 @@
   padding: .5rem; }
 
 .whats-showing-profile-credits .credit-placeholder {
-  background: black; }
+  background: #181818; }
 
 @media only screen and (max-width: 480px) {
   .whats-showing-profile-credits .credit {

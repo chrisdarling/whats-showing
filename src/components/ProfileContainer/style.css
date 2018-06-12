@@ -22,8 +22,6 @@
         width: 80%;
         font-size: 1.5rem;
         font-weight: 600; }
-      .whats-showing-profile .profile-container .left-column .biography {
-        font-weight: 200; }
       .whats-showing-profile .profile-container .left-column .profile-image-container {
         display: block;
         position: relative;
@@ -35,7 +33,7 @@
           height: 0;
           width: 100%;
           padding-top: 100%;
-          background: black;
+          background: #181818;
           border-radius: .5rem; }
           .whats-showing-profile .profile-container .left-column .profile-image-container .intrinsic.intrinsic--2x3 {
             padding-top: 150%; }
@@ -46,7 +44,7 @@
           width: 100%;
           height: 100%;
           border-radius: .5rem;
-          border: 1px solid #202020; }
+          border: 1px solid #282828; }
     .whats-showing-profile .profile-container .right-column {
       display: flex;
       flex-direction: column;

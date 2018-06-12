@@ -33,21 +33,22 @@
           .whats-showing-movie-details .column-left .movie-side-bar .details .genre-item {
             font-size: .8rem;
             padding: .5rem;
-            color: #dadedf;
-            background: black;
+            color: #DD523C;
+            background: #181818;
             margin-right: .5rem;
             margin-top: .5rem;
-            border-radius: 5px;
-            font-weight: 200; }
+            border-radius: 5px; }
           .whats-showing-movie-details .column-left .movie-side-bar .details .status-info {
             flex-wrap: wrap;
-            margin-top: .5rem;
-            font-weight: 200; }
+            margin-top: .5rem; }
           .whats-showing-movie-details .column-left .movie-side-bar .details .status {
-            margin-right: 1rem; }
+            margin-right: 1rem;
+            font-weight: 400; }
+          .whats-showing-movie-details .column-left .movie-side-bar .details .release-date {
+            color: #a7b0b2; }
           .whats-showing-movie-details .column-left .movie-side-bar .details .ant-btn.trailer {
             color: #dadedf;
-            background: black;
+            background: #181818;
             margin-top: 1rem; }
     .whats-showing-movie-details .column-right {
       display: flex;

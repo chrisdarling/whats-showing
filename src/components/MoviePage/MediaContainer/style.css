@@ -8,7 +8,8 @@
     margin: 0;
     padding: 0 0 1rem 0;
     font-size: 1.5rem;
-    color: #dadedf; }
+    color: #dadedf;
+    font-weight: 600; }
   .whats-showing-movie-media .no-media {
     display: flex;
     padding-bottom: 1rem;
@@ -18,7 +19,7 @@
       display: flex;
       align-items: center;
       width: 100%;
-      background: black; }
+      background: #181818; }
       .whats-showing-movie-media .no-media .media-default p {
         text-align: center;
         width: 100%; }
@@ -35,7 +36,7 @@
       height: 0;
       width: 100%;
       padding-top: 100%;
-      background: black;
+      background: #181818;
       border-radius: .5rem; }
       .whats-showing-movie-media .media-container .intrinsic.intrinsic--2x3 {
         padding-top: 56%; }
@@ -63,7 +64,7 @@
       width: 100%;
       cursor: zoom-in; }
     .whats-showing-movie-media .media-container .video, .whats-showing-movie-media .media-container .poster {
-      background: black; }
+      background: #181818; }
   .whats-showing-movie-media .ant-carousel .slick-initialized .slick-slide {
     display: flex; }
   .whats-showing-movie-media .ant-carousel .slick-dots {

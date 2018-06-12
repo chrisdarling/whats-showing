@@ -6,7 +6,9 @@
   .whats-showing-movie-overview .overview {
     display: flex;
     flex-direction: column;
-    font-weight: 200; }
+    font-weight: 400; }
+  .whats-showing-movie-overview .overview-info {
+    font-size: 1.2rem; }
   .whats-showing-movie-overview .tagline {
     font-size: 1.2rem;
     font-weight: 500;
@@ -17,7 +19,7 @@
     display: flex;
     width: 100%;
     padding-top: 1rem;
-    font-weight: 200; }
+    font-weight: 400; }
     .whats-showing-movie-overview .detail-container .title {
       width: 30%; }
     .whats-showing-movie-overview .detail-container .detail-parent {
@@ -27,8 +29,8 @@
     .whats-showing-movie-overview .detail-container .detail {
       margin-right: .5rem;
       margin-left: .5rem;
-      color: #dadedf;
-      background: black;
-      font-size: 1rem;
+      color: #DD523C;
+      background: #181818;
+      font-size: .8rem;
       padding: .5rem;
       border-radius: 5px; }

@@ -10,15 +10,14 @@
     .whats-showing-search-sidebar .sidebar-title {
       width: 90%;
       height: 2rem;
-      font-weight: 200;
       padding-bottom: .5rem;
       border-bottom: 1px solid #dadedf;
-      margin-bottom: .5rem; }
+      margin-bottom: .5rem;
+      font-weight: 600; }
     .whats-showing-search-sidebar .movies {
       display: flex;
       justify-content: space-between;
       width: 90%;
-      font-weight: 200;
       cursor: pointer;
       padding: .5rem;
       margin-bottom: .5rem; }
@@ -26,11 +25,16 @@
       display: flex;
       justify-content: space-between;
       width: 90%;
-      font-weight: 200;
       cursor: pointer;
       padding: .5rem; }
+    .whats-showing-search-sidebar .people, .whats-showing-search-sidebar .movies {
+      color: #a7b0b2; }
+    .whats-showing-search-sidebar .people.active, .whats-showing-search-sidebar .movies.active {
+      color: #dadedf; }
+    .whats-showing-search-sidebar .result-count {
+      color: #DD523C; }
     .whats-showing-search-sidebar .active {
-      background: black;
+      background: #181818;
       font-weight: 600; }
   .whats-showing-search-results {
     display: flex;
@@ -40,13 +44,12 @@
     .whats-showing-search-results .result-header {
       font-size: 1rem;
       padding-bottom: .5rem;
-      font-weight: 200;
       width: 100%;
       height: 2rem;
       border-bottom: 1px solid #dadedf;
-      color: #dadedf; }
+      color: #a7b0b2; }
     .whats-showing-search-results .search-string {
-      font-weight: 600; }
+      color: #DD523C; }
     .whats-showing-search-results .result-container {
       display: flex;
       flex-wrap: wrap;
@@ -58,7 +61,7 @@
         align-items: center;
         width: 100%;
         height: 200px;
-        background: black; }
+        background: #181818; }
         .whats-showing-search-results .result-container .no-content p {
           text-align: center;
           width: 100%; }
@@ -95,15 +98,15 @@
       width: 100%;
       height: 100%;
       border-radius: 5px;
-      border: 1px solid black;
-      background: black; }
+      border: 1px solid #181818;
+      background: #181818; }
     .whats-showing-search-results .intrinsic {
       display: block;
       position: relative;
       height: 0;
       width: 100%;
       padding-top: 100%;
-      background: black;
+      background: #181818;
       border-radius: .5rem; }
       .whats-showing-search-results .intrinsic.intrinsic--2x3 {
         padding-top: 150%; }

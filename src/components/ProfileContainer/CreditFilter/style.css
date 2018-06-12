@@ -1,11 +1,13 @@
 .credit-filter-title {
   font-size: 1.2rem;
-  font-weight: 200;
+  font-weight: 400;
   margin: 0;
-  margin-bottom: .5rem; }
+  margin-bottom: .5rem;
+  color: #a7b0b2; }
   .credit-filter-title .name {
     font-size: 1.2rem;
-    font-weight: 600; }
+    font-weight: 600;
+    color: #dadedf; }
 
 .credit-filter .credit-filter-column {
   display: flex; }
@@ -14,7 +16,7 @@
 
 .credit-filter .year-selector .ant-radio-button-wrapper {
   width: 10%;
-  background: black;
+  background: #181818;
   color: #dadedf; }
 
 .credit-filter .year-selector .ant-radio-button-wrapper-checked {
@@ -23,7 +25,7 @@
   border: 1px solid #DD523C; }
 
 .ant-select-dropdown-menu-item {
-  background: black;
+  background: #181818;
   color: #dadedf; }
   .ant-select-dropdown-menu-item:hover {
     color: #DD523C; }

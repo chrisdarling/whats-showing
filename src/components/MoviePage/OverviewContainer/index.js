@@ -28,7 +28,7 @@ export default class OverviewContainer extends Component {
                     <DetailItem title="Director">
                         {directors.map((d, i) => 
                             <Link to={`/profile/${d.id}`} key={`${d.name}-${i}`} className="detail">
-                                <div>{d.name}</div>
+                                {d.name}
                             </Link>)}
                     </DetailItem>
                     <DetailItem title="Runtime">

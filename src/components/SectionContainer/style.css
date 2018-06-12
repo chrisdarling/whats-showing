@@ -25,7 +25,7 @@
   .whats-showing-section-card {
     display: flex;
     flex-direction: column;
-    background: #202020;
+    background: #282828;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     height: 100%; }
@@ -35,7 +35,7 @@
       height: 0;
       width: 100%;
       padding-top: 100%;
-      background: black; }
+      background: #181818; }
       .whats-showing-section-card .intrinsic.intrinsic--2x3 {
         padding-top: 56%; }
     .whats-showing-section-card .backdrop-image {
@@ -46,17 +46,22 @@
       height: 100%; }
     .whats-showing-section-card .placeholder {
       opacity: 0.6; }
+    .whats-showing-section-card:hover .card-content {
+      color: #DD523C; }
     .whats-showing-section-card .card-content {
       padding: .5rem;
       color: #dadedf;
-      background: #202020;
+      background: #282828;
       cursor: pointer; }
       .whats-showing-section-card .card-content:hover {
         color: #DD523C; }
       .whats-showing-section-card .card-content .small-title, .whats-showing-section-card .card-content .small-date {
-        font-size: .8rem;
+        font-size: 1rem;
         padding-bottom: .5rem;
+        font-weight: 400;
         margin-right: .5rem; }
+      .whats-showing-section-card .card-content .small-date {
+        color: #9c979A; }
 
 @media only screen and (max-width: 768px) {
   .whats-showing-section-wrapper {

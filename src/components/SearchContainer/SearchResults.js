@@ -60,7 +60,7 @@ export default class SearchResults extends Component {
 
         return (
             <div className={`${className}-results`}>
-                <div className="result-header">SEARCH RESULTS FOR: <span className="search-string">{`${searchString.toUpperCase()}`}</span></div>
+                <div className="result-header">SEARCH RESULTS FOR <span className="search-string">{`${searchString.toUpperCase()}`}</span></div>
                 {content}
                 <Pagination size="small" current={current} pageSize={20} total={this.Total} onChange={onPageChange} />
             </div>
