@@ -23,6 +23,7 @@ export default class AppContainer extends Component {
                         <Route path="/search/:type/:searchString/:page" component={SearchContainer} />
                         <Route path="/search/:type/:searchString/" component={SearchContainer} />
                         <Route path="/" exact component={Main} />
+                        <Route component={Main} />
                     </Switch >
                 </div>
                 <Footer />

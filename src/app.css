@@ -6,6 +6,10 @@
 *:focus {
   outline: none; }
 
+*::selection {
+  color: #DEA67F;
+  background: #181818; }
+
 html, body {
   width: 100%;
   height: 100%;
